@@ -1,0 +1,76 @@
+.poemAuthorTitle {
+  margin: 20px;
+}
+
+.poemContent {
+  vertical-align: bottom;
+  white-space: pre-line;
+}
+
+.topicMain {
+  margin: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+}
+
+.homepageAuthor {
+  box-shadow: 0px 10px 40px rgb(0 0 0 / 20%);
+  margin: 30px;
+  text-align: center;
+  padding: 30px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  font-size: 1.05em;
+  max-width: 1000px;
+}
+
+@media screen and (min-width: 800px) {
+  .poemMain {
+    max-width: 1000px;
+    width: 70vw;
+    margin: 4rem auto;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .poemDiv {
+    box-shadow: 0px 10px 40px rgb(0 0 0 / 20%);
+    margin: 30px;
+    text-align: center;
+    padding: 30px;
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    line-height: 30px;
+    font-size: 1.05em;
+    max-width: 1000px;
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .poemMain {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .poemDiv {
+    box-shadow: 0px 10px 40px rgb(0 0 0 / 20%);
+    margin: 30px;
+    text-align: center;
+    padding: 30px;
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    line-height: 30px;
+    font-size: 1.05em;
+    max-width: 100%;
+    width: 100%;
+  }
+}

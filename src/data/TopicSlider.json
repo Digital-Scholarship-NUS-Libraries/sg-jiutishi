@@ -1,0 +1,233 @@
+[
+    {
+      "id": 1,
+      "slider": "slider-binlang.jpeg",
+      "Tag": "南洋水果",
+      "Title": "檳榔",
+      "Content": "2019"
+    },
+    {
+      "id": 2,
+      "slider": "slider-chenyanqian.png",
+      "Tag": null,
+      "Title": null,
+      "Content": null
+    },
+    {
+      "id": 3,
+      "slider": "slider-chunlian.jpeg",
+      "Tag": null,
+      "Title": null,
+      "Content": null
+    },
+    {
+      "id": 4,
+      "slider": "slider-dazhuan.png",
+      "Tag": null,
+      "Title": null,
+      "Content": null
+    },
+    {
+      "id": 5,
+      "slider": "slider-durian.jpg",
+      "Tag": "南洋水果文化",
+      "Title": "榴蓮",
+      "Content": null
+    },
+    {
+      "id": 6,
+      "slider": "slider-fengyue.png",
+      "Tag": "風月",
+      "Title": "風月",
+      "Content": null
+    },
+    {
+      "id": 7,
+      "slider": "slider-fengyue2.png",
+      "Tag": "風月",
+      "Title": "風月",
+      "Content": null
+    },
+    {
+      "id": 8,
+      "slider": "slider-fengyue3.png",
+      "Tag": "星洲風月",
+      "Title": "新聞屑-笑紅竟作悼紅",
+      "Content": "UT-1919-10-7-12"
+    },
+    {
+      "id": 9,
+      "slider": "slider-foyuchanxin1.jpg",
+      "Tag": "佛語禪心",
+      "Title": "佛語禪心",
+      "Content": null
+    },
+    {
+      "id": 10,
+      "slider": "slider-foyuchanxin2.png",
+      "Tag": "佛語禪心",
+      "Title": "佛語禪心",
+      "Content": null
+    },
+    {
+      "id": 11,
+      "slider": "slider-haiguozhantan.png",
+      "Tag": null,
+      "Title": null,
+      "Content": null
+    },
+    {
+      "id": 12,
+      "slider": "slider-lunxianshiqi1.jpeg",
+      "Tag": "Japanese Occupation of Singapore",
+      "Title": "新加坡淪陷",
+      "Content": "1942-1945"
+    },
+    {
+      "id": 13,
+      "slider": "slider-lunxianshiqi2.png",
+      "Tag": "Japanese Occupation of Singapore",
+      "Title": "新加坡淪陷",
+      "Content": "1942-1945"
+    },
+    {
+      "id": 14,
+      "slider": "slider-mingshengguji-1.jpg",
+      "Tag": "濱海灣",
+      "Title": "魚尾獅",
+      "Content": "1965-2019"
+    },
+    {
+      "id": 15,
+      "slider": "slider-nus.png",
+      "Tag": null,
+      "Title": null,
+      "Content": null
+    },
+    {
+      "id": 16,
+      "slider": "slider-qiushuyuan1.png",
+      "Tag": null,
+      "Title": null,
+      "Content": null
+    },
+    {
+      "id": 17,
+      "slider": "slider-sgyinglian.png",
+      "Tag": null,
+      "Title": null,
+      "Content": null
+    },
+    {
+      "id": 18,
+      "slider": "slider-shishe1.jpg",
+      "Tag": null,
+      "Title": null,
+      "Content": null
+    },
+    {
+      "id": 19,
+      "slider": "slider-shuanglin.jpg",
+      "Tag": "184 Jalan Toa Payoh, Singapore 319944",
+      "Title": "雙林寺",
+      "Content": null
+    },
+    {
+      "id": 20,
+      "slider": "slider-tanxietongren1.png",
+      "Tag": null,
+      "Title": null,
+      "Content": null
+    },
+    {
+      "id": 21,
+      "slider": "slider-tanxietongren2.png",
+      "Tag": null,
+      "Title": null,
+      "Content": null
+    },
+    {
+      "id": 22,
+      "slider": "slider-tanxietongren3.png",
+      "Tag": null,
+      "Title": null,
+      "Content": null
+    },
+    {
+      "id": 23,
+      "slider": "slider-xinsheng1.jpg",
+      "Tag": null,
+      "Title": "新聲詩社丹戎禺雅集照片1",
+      "Content": null
+    },
+    {
+      "id": 24,
+      "slider": "slider-xinsheng2.jpg",
+      "Tag": null,
+      "Title": "新聲詩社丹戎禺雅集照片2",
+      "Content": null
+    },
+    {
+      "id": 25,
+      "slider": "slider-xinsheng3.jpg",
+      "Tag": null,
+      "Title": "新聲詩社丹戎禺雅集照片3",
+      "Content": null
+    },
+    {
+      "id": 26,
+      "slider": "slider-xinsheng4.jpg",
+      "Tag": null,
+      "Title": "新聲詩社丹戎禺雅集照片4",
+      "Content": null
+    },
+    {
+      "id": 27,
+      "slider": "slider-xinsheng5.jpg",
+      "Tag": null,
+      "Title": "新聲詩社丹戎禺雅集照片5",
+      "Content": null
+    },
+    {
+      "id": 28,
+      "slider": "slider-xinsheng6.jpg",
+      "Tag": null,
+      "Title": "新聲詩社丹戎禺雅集照片6",
+      "Content": null
+    },
+    {
+      "id": 29,
+      "slider": "slider-xinsheng7.jpg",
+      "Tag": null,
+      "Title": "新聲詩社丹戎禺雅集照片7",
+      "Content": null
+    },
+    {
+      "id": 30,
+      "slider": "slider-xinsheng8.jpg",
+      "Tag": null,
+      "Title": "新聲詩社丹戎禺雅集照片8",
+      "Content": null
+    },
+    {
+      "id": 31,
+      "slider": "slider-xinsheng9.jpg",
+      "Tag": null,
+      "Title": "新聲詩社丹戎禺雅集照片9",
+      "Content": null
+    },
+    {
+      "id": 32,
+      "slider": "slider-xinzhou.png",
+      "Tag": null,
+      "Title": null,
+      "Content": null
+    },
+    {
+      "id": 33,
+      "slider": "slider-yusheng.jpeg",
+      "Tag": "南洋文化傳統",
+      "Title": "撈魚生",
+      "Content": "2019"
+    }
+   ]

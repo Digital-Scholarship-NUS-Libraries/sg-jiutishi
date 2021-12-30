@@ -4,35 +4,54 @@ import {
   poemAuthorTitle,
   poemContent,
   poemMain,
+  logoImage,
 } from "../../style.module.css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Container } from "react-bootstrap"
+import topics from "../data/Topic.json"
 
 export default function Poem({ pageContext: { poem } }) {
+  function getLogoImage() {
+    const poemTopic = poem.category
+    const filtered = topics.filter(topic => topic.chn_name === poemTopic)
+    return filtered[0].logo_url
+  }
+
+  const logo = getLogoImage()
+
   return (
-    <Layout>
-      <Seo title="Home" />
-      <Container>
-        <div className={poemMain}>
-          <div className={poemDiv}>
-            <h4 className={poemAuthorTitle}>{poem.title}</h4>
-            <h6 className={poemAuthorTitle}>{poem.author_name}</h6>
-            <p className={poemContent}>{poem.content}</p>
-            <br />
-            <h6 className={poemAuthorTitle}>{poem.published_info}</h6>
+    <div>
+      <img
+        src={require(`../images/logo/${logo}`).default}
+        alt="logo image"
+        className={logoImage}
+      ></img>
+      <Layout>
+        <Seo title="Home" />
+        <Container>
+          <div className={poemMain}>
+            <div className={poemDiv}>
+              <h4 className={poemAuthorTitle}>{poem.title}</h4>
+              <h6 className={poemAuthorTitle}>{poem.author_name}</h6>
+              <p className={poemContent}>{poem.content}</p>
+              <br />
+              <h6 className={poemAuthorTitle}>{poem.published_info}</h6>
+            </div>
+            <a
+              href={`/${poem.category}`}
+              style={{ alignSelf: "center", marginBottom: "50px" }}
+            >
+              <button
+                className={"btn btn-outline-dark rounded-0"}
+                type="button"
+              >
+                返回上頁
+              </button>
+            </a>
           </div>
-          <a
-            href={`/${poem.category}`}
-            style={{ alignSelf: "center", marginBottom: "50px" }}
-          >
-            <button class="btn btn-outline-dark rounded-0" type="button">
-              Back to the previous page
-              {/* <a href="/nanyangfengtu" className={poemGoBackLink}></a> */}
-            </button>
-          </a>
-        </div>
-      </Container>
-    </Layout>
+        </Container>
+      </Layout>
+    </div>
   )
 }

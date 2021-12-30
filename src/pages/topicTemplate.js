@@ -1,17 +1,63 @@
 import data from "../data/Poem.json"
+import topicSliderData from "../data/TopicSlider.json"
 import topicData from "../data/Topic.json"
 import React from "react"
-import { topicMain } from "../../style.module.css"
+import { topicMain, logoImage } from "../../style.module.css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Container, Carousel, Image } from "react-bootstrap"
+import authors from "../data/Poet.json"
 
 export default function topicTemplate({ pageContext: { topic } }) {
+  function getYear(aut) {
+    const getAuthor = authors.filter(author => author.fullName === aut)
+    console.log(getAuthor)
+    if (getAuthor.length === 0) {
+      return ""
+    } else if (
+      getAuthor[0].yearOfBirth === null &&
+      getAuthor[0].yearOfDeath === null
+    ) {
+      return ""
+    } else if (
+      getAuthor[0].yearOfBirth === null &&
+      getAuthor[0].yearOfDeath !== null
+    ) {
+      return " ( ?" + " - " + getAuthor[0].yearOfDeath + " )"
+    } else if (
+      getAuthor[0].yearOfBirth !== null &&
+      getAuthor[0].yearOfDeath === null
+    ) {
+      return " ( " + getAuthor[0].yearOfBirth + " - " + "? )"
+    } else if (getAuthor[0].yearOfDeath === "0") {
+      return " ( " + getAuthor[0].yearOfBirth + " - )"
+    } else {
+      return (
+        " ( " +
+        getAuthor[0].yearOfBirth +
+        " - " +
+        getAuthor[0].yearOfDeath +
+        " )"
+      )
+    }
+  }
   function getSlideImage() {
-    const getTopic = topicData.filter(data => data.chn_name === topic)
+    const getTopic = topicData.filter(data => data.chn_name === topic.chn_name)
     const slideImageArray = getTopic[0].slider
     console.log(slideImageArray)
     return slideImageArray
+  }
+
+  function getSlideImageData(photo) {
+    console.log(photo)
+    const getPhoto = topicSliderData.filter(data => data.slider === photo)
+    console.log(getPhoto)
+    var dataDict = {}
+    dataDict["Tag"] = getPhoto[0].Tag
+    dataDict["Title"] = getPhoto[0].Title
+    dataDict["Content"] = getPhoto[0].Content
+    console.log(dataDict)
+    return dataDict
   }
 
   function sortByProperty(property) {
@@ -22,7 +68,7 @@ export default function topicTemplate({ pageContext: { topic } }) {
     }
   }
   function getSortedNYFT() {
-    const filtered = data.filter(data => data.category === topic)
+    const filtered = data.filter(data => data.category === topic.chn_name)
     const filteredSort = filtered.sort(sortByProperty("author_name"))
     var dict = {}
     for (let i = 0; i < filteredSort.length; i++) {
@@ -44,67 +90,120 @@ export default function topicTemplate({ pageContext: { topic } }) {
   const final = Object.entries(sortedData)
 
   return (
-    <Layout>
-      <Seo title="Home" />
-      <Carousel>
-        {slideImage.map((image, i) => (
-          <Carousel.Item key={i}>
-            <Image
-              className="d-block w-100"
-              style={{ width: "1920px", height: "700px", objectFit: "cover" }}
-              src={require(`../images/slider/${image}`).default}
-              alt="First slide"
-            />
-            <Carousel.Caption style={{ left: "30%", right: "30%" }}>
-              <div
-                style={{
-                  backgroundColor: "rgba(0,0,0,0.5)",
-                  display: "flex",
-                  padding: "10px",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <button
-                  class="btn btn-outline-light rounded-0"
-                  type="button"
-                  style={{ margin: "5px", borderRadius: "0px !important" }}
-                >
-                  濱海灣
-                </button>
-                <br />
-                <h4>雙林寺</h4>
-                <br />
-                <p></p>
-              </div>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
-      <Container>
-        <div>
-          <div className={topicMain}>
-            {final.map((author, i) => (
-              <div style={{ margin: "30px" }}>
-                <h4 style={{ marginBottom: "20px" }}>{author[0]}</h4>
+    <div>
+      <img
+        src={require(`../images/logo/${topic.logo_url}`).default}
+        alt="logo image"
+        className={logoImage}
+      ></img>
 
-                {author[1].map(poem => (
-                  <a href={`/poem/${poem.author_name}/${poem.title}`}>
-                    <button
-                      class="btn btn-outline-dark rounded-0"
-                      type="button"
-                      style={{ margin: "5px", borderRadius: "0px !important" }}
+      <Layout>
+        <Seo title="Home" />
+
+        {slideImage ? (
+          <Carousel>
+            {slideImage.map((image, i) => (
+              <Carousel.Item key={i}>
+                <Image
+                  className="d-block w-100"
+                  style={{
+                    width: "1920px",
+                    height: "700px",
+                    objectFit: "cover",
+                  }}
+                  src={require(`../images/slider/${image}`).default}
+                  alt="First slide"
+                />
+                {getSlideImageData(image).Tag ||
+                getSlideImageData(image).Content ||
+                getSlideImageData(image).Title ? (
+                  <Carousel.Caption style={{ left: "30%", right: "30%" }}>
+                    <div
+                      style={{
+                        backgroundColor: "rgba(0,0,0,0.5)",
+                        display: "flex",
+                        padding: "10px",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
                     >
-                      {poem.title}
-                    </button>
-                  </a>
-                ))}
-              </div>
+                      {getSlideImageData(image).Tag ? (
+                        <button
+                          className={"btn btn-outline-light rounded-0"}
+                          type="button"
+                          style={{
+                            margin: "5px",
+                            borderRadius: "0px !important",
+                          }}
+                        >
+                          {getSlideImageData(image).Tag}
+                        </button>
+                      ) : (
+                        ""
+                      )}
+                      <br />
+                      <h3 style={{ color: "white" }}>
+                        {getSlideImageData(image).Title}
+                      </h3>
+                      <br />
+                      <p style={{ color: "white" }}>
+                        {getSlideImageData(image).Content}
+                      </p>
+                    </div>
+                  </Carousel.Caption>
+                ) : (
+                  ""
+                )}
+              </Carousel.Item>
             ))}
+          </Carousel>
+        ) : (
+          ""
+        )}
+
+        <Container>
+          <div>
+            <div className={topicMain}>
+              <div style={{ margin: "30px" }}>
+                <h3 style={{ marginBottom: "20px" }}>{topic.blog_title}</h3>
+                <p
+                  style={{
+                    textAlign: "justify",
+                    whiteSpace: "pre-line",
+                    verticalAlign: "bottom",
+                  }}
+                >
+                  {topic.blog_content}
+                </p>
+              </div>
+              {final.map((author, i) => (
+                <div style={{ margin: "30px" }}>
+                  <h4 style={{ marginBottom: "20px" }}>
+                    {author[0]}
+                    {getYear(author[0])}
+                  </h4>
+
+                  {author[1].map(poem => (
+                    <a href={`/poem/${poem.author_name}/${poem.title}`}>
+                      <button
+                        className={"btn btn-outline-dark rounded-0"}
+                        type="button"
+                        style={{
+                          margin: "5px",
+                          borderRadius: "0px !important",
+                        }}
+                      >
+                        {poem.title}
+                      </button>
+                    </a>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </Container>
-    </Layout>
+        </Container>
+      </Layout>
+    </div>
   )
 }

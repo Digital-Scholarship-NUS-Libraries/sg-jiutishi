@@ -1,15 +1,7 @@
 import React from "react"
 import * as styles from "./Content.module.scss"
-import {
-  Container,
-  Jumbotron,
-  Col,
-  Row,
-  Card,
-  CardDeck,
-  Button,
-} from "react-bootstrap"
-import { StaticImage } from "gatsby-plugin-image"
+import { Container, Jumbotron } from "react-bootstrap"
+// import { StaticImage } from "gatsby-plugin-image"
 
 export default function Content() {
   return (

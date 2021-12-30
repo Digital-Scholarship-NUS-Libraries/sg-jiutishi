@@ -1,3 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #555;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
 .poemAuthorTitle {
   margin: 20px;
 }
@@ -19,16 +29,43 @@
 .homepageAuthor {
   box-shadow: 0px 10px 40px rgb(0 0 0 / 20%);
   margin: 30px;
+  margin-bottom: 60px;
   text-align: center;
   padding: 30px;
   font-family: "Maven Pro", sans-serif;
   font-weight: 400;
   line-height: 30px;
   font-size: 1.05em;
-  max-width: 1000px;
+  /* max-width: 1000px; */
+  min-width: 300px;
+}
+
+.homepageAuthorImage {
+  max-width: 150px;
+  border-radius: 3px;
+  transform: translateY(-60px);
+  box-shadow: 0px 10px 40px rgb(0 0 0 / 20%);
+}
+
+.alphabetList {
+  background-color: white;
+  transition: background-color 0.3s;
+}
+
+.alphabetList:hover {
+  background-color: #ddd;
+  transition: background-color 0.3s;
 }
 
 @media screen and (min-width: 800px) {
+  .paperMain {
+    margin: 10vw;
+    margin-top: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
   .poemMain {
     max-width: 1000px;
     width: 70vw;
@@ -51,9 +88,25 @@
     max-width: 1000px;
     width: 70vw;
   }
+
+  .logoImage {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    height: 160px;
+    align-self: center;
+  }
 }
 
 @media screen and (max-width: 800px) {
+  .paperMain {
+    width: 100%;
+    margin-top: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+  }
   .poemMain {
     width: 100%;
     background-color: white;
@@ -73,5 +126,58 @@
     font-size: 1.05em;
     max-width: 100%;
     width: 100%;
+  }
+
+  .logoImage {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    height: 10vh;
+
+    align-self: center;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .indexMain {
+    /* margin: 10vw; */
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    text-align: left;
+  }
+
+  .indexRight {
+    margin-left: 2vw;
+  }
+
+  .indexLeft {
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .indexMain {
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: left;
+  }
+
+  .indexRight {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+
+  .indexLeft {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
   }
 }

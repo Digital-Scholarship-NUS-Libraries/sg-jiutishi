@@ -1,87 +1,51 @@
 .navbar {
-    z-index: 6660;
-    height: var(--header-height);
-    padding:0px !important;
-    max-width:100% !important;
-    background-color: #f8f8f8;
-    display:flex;
-    justify-content:left;
-    border-top: 1px solid #e7e7e7;
-    font-family: "Helvetica Neue Lt", Helvetica, Arial, sans-serif;
+  z-index: 6660;
+  height: var(--header-height);
+  padding: 0px !important;
+  max-width: 100% !important;
+  background-color: #fff;
+  display: flex;
+  justify-content: center !important;
+  border-top: 1px solid #e7e7e7 !important;
+  font-family: "Helvetica Neue Lt", Helvetica, Arial, sans-serif;
+  box-shadow: 0px 6px 6px -4px rgb(0 0 0 / 30%);
+  margin-bottom: 20px;
 
-    nav{
-        padding:3px;
-    }
-
+  nav {
+    padding: 0px;
+    justify-content: center !important;
+  }
 }
 
-.navItemHome {
-    color:#999 !important;
-    font-size:14px;
-    padding:8px 0px 8px 0px !important;
-    margin:0px 10px;
-    border-bottom: 3px solid #ef7c00;
-    color:#003D7C !important;
+.navItem {
+  color: #999 !important;
+  font-size: 14px;
+  text-align: center;
+  width: 100px;
+  line-height: 50px;
+  padding: 0 20px;
+  transition: all 0.3s;
 
+  a {
+    color: #999;
+    font-size: 14px;
+    line-height: 50px;
+  }
+
+  a:hover {
+    background-color: #eee;
+  }
+
+  a:visited {
+    background-color: #eee;
+  }
 }
 
-  .navItem {
-    color: #999 !important;
-    font-size:14px;
-    padding-bottom:3px;
-    margin:0px 10px;
+.navItem:hover {
+  color: #000 !important;
+  background: #eee;
 
-    a {
-        color: #999 !important;
-    }
-
-    & > div {
-        margin-top:3px !important;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        padding:15px;
-
-        h5 {
-            margin-top:5px;
-        }
-
-        a {
-            border-top: 1px solid #e7e7e7;
-            color: #999 !important;
-            padding: 10px 5px;
-            font-size:14px;
-        }
-
-        a:hover {
-            background-color:#f8f8f8; 
-        }
-
-        a:active {
-            color:#003D7C !important;
-            background-color:#f8f8f8;
-        }
-
-        a:visited {
-            background-color: #f8f8f8;
-        }
-
-    }
-}
-
-.navItem:hover{
-    border-bottom: 3px solid #ef7c00;
-    padding:0px 0px;
-    margin:0px 10px;
-
-    a{
-        color: #000 !important;
-    }
-}
-
- .navItemHome:hover {
-    border-bottom: 3px solid #ef7c00;
+  a {
     color: #000 !important;
-    padding:8px 0px 3px 0px !important;
-    margin:0px 10px;
- }
-
-  
+  }
+}

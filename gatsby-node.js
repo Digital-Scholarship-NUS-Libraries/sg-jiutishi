@@ -1,4 +1,6 @@
 const Poem = require("./src/data/Poem.json")
+const Topic = require("./src/data/Topic.json")
+const Paper = require("./src/data/Paper.json")
 
 exports.createPages = async ({ actions: { createPage } }) => {
   const allPoem = Poem
@@ -10,12 +12,58 @@ exports.createPages = async ({ actions: { createPage } }) => {
     })
   })
 
-  const allTopic = ["南洋風土", "名勝古跡"]
+  const allPaper = Paper
+  allPaper.forEach(paper => {
+    createPage({
+      path: `/paper/${paper.author}/${paper.title}`,
+      component: require.resolve("./src/pages/paperTemplate.js"),
+      context: { paper },
+    })
+  })
+
+  const allTopic = Topic
   allTopic.forEach(topic => {
     createPage({
-      path: `/${topic}`,
+      path: `/${topic.chn_name}`,
       component: require.resolve("./src/pages/topicTemplate.js"),
       context: { topic },
+    })
+  })
+
+  const allChars = [
+    "全部",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ]
+  allChars.forEach(char => {
+    createPage({
+      path: `/poet/${char}`,
+      component: require.resolve("./src/pages/poetTemplate.js"),
+      context: { char },
     })
   })
 }

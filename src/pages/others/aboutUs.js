@@ -1,6 +1,8 @@
 import * as React from "react"
 import { Container } from "react-bootstrap"
 import Content from "../../components/Content/Content.js"
+import { AiOutlineYoutube } from "@react-icons/all-files/ai/AiOutlineYoutube"
+
 import ReactPlayer from "react-player"
 
 import Layout from "../../components/layout"
@@ -15,6 +17,11 @@ import {
   homepageAuthorImage,
   poemAuthorTitle,
   logoImage,
+  youtubeLink,
+  aboutUsMain,
+  aboutUsLeft,
+  aboutUsRight,
+  indexVideoPlayer,
 } from "../../../style.module.css"
 
 const books = [
@@ -51,6 +58,24 @@ const books = [
 const AboutUs = () => {
   return (
     <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          padding: "15px 50px",
+          borderBottom: "1px solid #e7e7e7",
+          fontStyle: "italic",
+        }}
+      >
+        <span style={{ fontSize: "0.9rem" }}>歡迎訪問！</span>
+        <a
+          style={{ fontSize: "0.9rem" }}
+          className={youtubeLink}
+          href={"https://www.youtube.com/channel/UC4gHVnJB2rzTLti1vpkC4mQ"}
+        >
+          <AiOutlineYoutube /> 前往新加玻舊體詩庫Youtube頻道
+        </a>
+      </div>
       <img
         src={require(`../../images/logo/logo-aboutus.png`).default}
         alt="logo image"
@@ -60,12 +85,9 @@ const AboutUs = () => {
         <Seo title="Home" />
         <Container>
           <div>
-            <div class="row" className={indexMain}>
-              <div class="col-8" className={indexLeft}>
-                <div
-                  className={poemDiv}
-                  style={{ width: "100%", margin: "0px" }}
-                >
+            <div class="row" className={aboutUsMain}>
+              <div class="col-8" className={aboutUsLeft}>
+                <div className={homepageAuthor}>
                   <h4 className={poemAuthorTitle}>網站建設團隊</h4>
                   <h6 className={poemAuthorTitle}>網站主編: 林立</h6>
                   <h6 className={poemAuthorTitle}>
@@ -73,31 +95,46 @@ const AboutUs = () => {
                   </h6>
                 </div>
                 <div style={{ margin: "30px" }}>
+                  <br />
                   <p>
                     此網站建立於2020年，由新加坡華族文化中心贊助，旨在弘揚南洋舊體詩文化，促進文化交流。
+                    <br />
                     <br />
                     以下是 新加坡華族文化中心宣傳片
                   </p>
                   <ReactPlayer
                     style={{ marginBottom: "30px", width: "100%" }}
+                    controls={true}
+                    className={indexVideoPlayer}
                     url={"https://www.youtube.com/watch?v=Kl2t-6Zv6yI"}
                   ></ReactPlayer>
                 </div>
               </div>
 
-              <div
-                class="col-4"
-                className={indexRight}
-                style={{ minWidth: "300px" }}
-              >
+              <div class="col-4" className={aboutUsRight}>
                 <div className={homepageAuthor}>
                   <img
                     src={require(`../../images/img-prof.jpg`).default}
                     className={homepageAuthorImage}
                   ></img>
+                  <br />
+
                   <h4>Lam Lap(林立)</h4>
+
+                  <div style={{ marginTop: "30px", marginBottom: "30px" }}>
+                    <a
+                      className={youtubeLink}
+                      href={
+                        "https://www.youtube.com/channel/UC4gHVnJB2rzTLti1vpkC4mQ"
+                      }
+                    >
+                      <AiOutlineYoutube /> 新加玻舊體詩庫頻道
+                    </a>
+                  </div>
+
                   <p>
                     新加坡國立大學副教授。新加坡舊體詩庫網站創辦人。
+                    <br />
                     <br />
                     出版著作： <br />
                     1.《滄海遺音：民國時期清遺民詞研究》，香港：香港中文大學出版社。{" "}
@@ -114,13 +151,14 @@ const AboutUs = () => {
                     }
                   ></img>
                   <br />
-                  <a href={`/aboutUs`}>
+                  <br />
+                  <a href={`/others/aboutUs`}>
                     <button class="btn btn-outline-dark rounded-0">
                       Read More
                     </button>
                   </a>
                 </div>
-                <div>
+                <div style={{ margin: "30px" }}>
                   <h3>出版著作</h3>
                   {books.map((book, i) => (
                     <div
@@ -144,8 +182,11 @@ const AboutUs = () => {
                           marginLeft: "10px",
                         }}
                       >
-                        <a href={`/aboutUs`}>
-                          <button class="btn btn-outline-dark rounded-0">
+                        <a href={`/others/aboutUs`}>
+                          <button
+                            class="btn btn-outline-dark rounded-0"
+                            style={{ padding: "0px !important" }}
+                          >
                             {book.publisher}
                           </button>
                         </a>

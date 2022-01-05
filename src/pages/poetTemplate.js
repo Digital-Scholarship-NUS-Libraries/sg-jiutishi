@@ -4,7 +4,7 @@ import { Container, ToggleButton } from "react-bootstrap"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import "bootstrap/dist/css/bootstrap.min.css"
-import { alphabetList, logoImage } from "../../style.module.css"
+import { alphabetList, logoImage, topicMain } from "../../style.module.css"
 import Poet from "../data/Poet.json"
 
 export default function PoetTemplate({ pageContext: { char } }) {
@@ -93,6 +93,8 @@ export default function PoetTemplate({ pageContext: { char } }) {
                 display: "flex",
                 flexWrap: "wrap",
                 width: "100%",
+                marginTop: "60px",
+                marginBottom: "0px",
               }}
             >
               {alphabets.map((alphabet, idx) => (
@@ -100,17 +102,39 @@ export default function PoetTemplate({ pageContext: { char } }) {
                   href={`/poet/${alphabet}`}
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  <div style={{ padding: "8px 14px" }} className={alphabetList}>
+                  <div style={{ padding: "8px 15px" }} className={alphabetList}>
                     {alphabet}
                   </div>
                 </a>
               ))}
             </div>
-            <div>
+            <div className={topicMain}>
               {poets.length !== 0 && isReadingMore !== null ? (
                 poets.map((poet, i) => (
                   <div style={{ margin: "30px" }}>
                     <h4 style={{ marginBottom: "20px" }}>{poet.fullName}</h4>
+                    {poet.photo_link ? (
+                      <div
+                        style={{
+                          display: isReadingMore[i] ? "flex" : "none",
+                          alignItems: "center",
+                          flexDirection: "column",
+                          margin: "30px 0px",
+                        }}
+                      >
+                        <img
+                          src={
+                            require(`../images/poet/${poet.photo_link}`).default
+                          }
+                          style={{ margin: "0px auto 20px", maxWidth: "200px" }}
+                          alt={"poet-photo"}
+                        ></img>
+                        <span>{poet.fullName}先生的照片</span>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+
                     <p
                       style={{
                         whiteSpace: "pre-line",
@@ -121,7 +145,6 @@ export default function PoetTemplate({ pageContext: { char } }) {
                         0,
                         poet.description.indexOf("。")
                       )}
-
                       <span
                         style={{
                           display: isReadingMore[i] ? "none" : "inline",
@@ -131,7 +154,6 @@ export default function PoetTemplate({ pageContext: { char } }) {
                       >
                         ......（點擊瀏覽更多）
                       </span>
-
                       <span
                         style={{
                           display: isReadingMore[i] ? "inline" : "none",
@@ -151,14 +173,14 @@ export default function PoetTemplate({ pageContext: { char } }) {
                       }
                       class="btn btn-outline-dark rounded-0"
                       id="myBtn"
-                      style={{ marginTop: "30px" }}
+                      style={{ marginTop: "10px" }}
                     >
                       {isReadingMore[i] ? "折疊內容" : "瀏覽更多"}
                     </button>
                   </div>
                 ))
               ) : (
-                <div>
+                <div style={{ textAlign: "center" }}>
                   <p>暫無詩人</p>
                 </div>
               )}

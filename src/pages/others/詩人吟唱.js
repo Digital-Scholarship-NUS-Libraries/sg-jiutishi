@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react"
-import { topicMain, logoImage } from "../../../style.module.css"
+import {
+  topicMain,
+  logoImage,
+  indexVideoPlayer,
+} from "../../../style.module.css"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import { Container } from "react-bootstrap"
@@ -92,12 +96,16 @@ const 詩人吟唱 = () => {
             {allVid !== undefined &&
               allVid.map((data, index) => (
                 <div>
-                  <h4>
+                  <h4 style={{ marginTop: "60px" }}>
                     {data[0]}
                     {getYear(data[0])}
                   </h4>
 
-                  <ReactPlayer url={currVid[index]} controls={true} />
+                  <ReactPlayer
+                    url={currVid[index]}
+                    controls={true}
+                    className={indexVideoPlayer}
+                  />
                   {data[1].map(video => (
                     <button
                       onClick={() => changeCurrVid(video.link, index)}
@@ -108,10 +116,9 @@ const 詩人吟唱 = () => {
                       {video.title}
                     </button>
                   ))}
-                  <br />
-                  <br />
                 </div>
               ))}
+            <br />
           </div>
         </Container>
       </Layout>

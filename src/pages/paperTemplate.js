@@ -32,7 +32,6 @@ export default function Paper({ pageContext: { paper } }) {
               <h4 className={poemAuthorTitle}>{paper.title}</h4>
               <h6 className={poemAuthorTitle}>{paper.author}</h6>
               <br />
-              <p>{paper.link}</p>
 
               <iframe
                 src={require(`../papers/${paper.link}`).default}

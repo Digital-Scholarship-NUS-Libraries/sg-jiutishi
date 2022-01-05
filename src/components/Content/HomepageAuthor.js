@@ -54,7 +54,9 @@ const HomepageAuthor = () => {
             className={homepageAuthorImage}
           ></img>
           <h4>{author.name}</h4>
-          <p>{author.description}</p>
+          <br />
+          <p style={{ textAlign: "left" }}>{author.description}</p>
+
           {author.signature ? (
             <div>
               <img
@@ -65,6 +67,7 @@ const HomepageAuthor = () => {
           ) : (
             ""
           )}
+          <br />
           <a href={`${author.collectionURL}`}>
             <button class="btn btn-outline-dark rounded-0">
               {author.collectionName}

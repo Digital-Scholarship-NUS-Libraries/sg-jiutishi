@@ -25,12 +25,18 @@ const 雙林寺楹聯錄 = () => {
           <div className={poemMain}>
             <div className={poemDiv}>
               <h4 className={poemAuthorTitle}>双林寺楹联录</h4>
-              <h6 className={poemAuthorTitle}>
+              <span
+                style={{
+                  fontStyle: "italic",
+                  fontSize: "0.85rem",
+                }}
+              >
                 此目录主要据Kenneth Dean （丁荷生）与Hue Guan Thye（许源泰）所著
                 Chinese Epigraphy in Singapore
                 一书录入，另加入楹联所在位置、“题撰人/书法家”与“附注”等资料。
-              </h6>
-              <Table bordered hover size="sm">
+              </span>
+              <br />
+              <Table bordered hover size="sm" style={{ marginTop: "20px" }}>
                 <thead>
                   <tr>
                     <th></th>

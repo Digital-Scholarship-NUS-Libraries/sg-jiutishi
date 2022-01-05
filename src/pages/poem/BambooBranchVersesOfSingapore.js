@@ -194,22 +194,27 @@ const BambooBranchVersesOfSingapore = () => {
             <h4 className={poemAuthorTitle}>
               新加坡竹枝词英译 Bamboo Branch Verses of Singapore
             </h4>
-            <h6 className={poemAuthorTitle}>林立 侯海（Allen Haaheim）</h6>
+            <h5 className={poemAuthorTitle}>林立 侯海（Allen Haaheim）</h5>
+            <hr />
             {translations.map((translation, i) => (
-              <div>
-                <h6>{translation.englishTitle}</h6>
-                <h6>{translation.chineseTitle}</h6>
+              <div style={{ margin: "60px 20px" }}>
+                <h5>{translation.englishTitle}</h5>
+                <h5>{translation.chineseTitle}</h5>
                 <br />
                 {translation.content.map((con, i) => (
                   <div>
                     <p>{con.englishContent}</p>
                     <p>{con.chineseContent}</p>
+                    <br />
                   </div>
                 ))}
 
-                <br />
                 <span>{translation.notes}</span>
+
                 <i>{translation.info}</i>
+                <br />
+                <br />
+                <hr />
               </div>
             ))}
           </div>

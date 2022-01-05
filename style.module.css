@@ -8,6 +8,13 @@
   line-height: 1.6;
 }
 
+button {
+  font-size: 0.9rem !important;
+  padding: 10px 20px !important;
+  color: white;
+  margin: 10px 0px;
+}
+
 .poemAuthorTitle {
   margin: 20px;
 }
@@ -15,15 +22,6 @@
 .poemContent {
   vertical-align: bottom;
   white-space: pre-line;
-}
-
-.topicMain {
-  margin: 10vw;
-  margin-top: 5vw;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  text-align: left;
 }
 
 .homepageAuthor {
@@ -57,13 +55,68 @@
   transition: background-color 0.3s;
 }
 
+.youtubeLink {
+  color: #888;
+  transition: color 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.youtubeLink:hover {
+  color: #ffad4d;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .aboutUsMain {
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    text-align: left;
+  }
+
+  .aboutUsLeft {
+    margin-left: 2vw;
+  }
+
+  .aboutUsRight {
+    margin-right: auto;
+    min-width: 300px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .aboutUsMain {
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: left;
+    max-width: 1200px !important;
+  }
+
+  .aboutUsLeft {
+    /* margin-left: 2vw; */
+  }
+
+  .aboutUsRight {
+    /* margin-right: auto; */
+    min-width: 350px;
+  }
+}
+
 @media screen and (min-width: 800px) {
   .paperMain {
     margin: 10vw;
     margin-top: 5vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
     text-align: left;
   }
   .poemMain {
@@ -96,9 +149,56 @@
     height: 160px;
     align-self: center;
   }
+
+  .topicMain {
+    margin: 5vw;
+    margin-top: 5vw;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .indexVideoPlayer {
+    width: 100% !important;
+    height: 450px !important;
+  }
 }
 
 @media screen and (max-width: 800px) {
+  .indexMain {
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: left;
+    max-width: 800px !important;
+  }
+
+  .indexRight {
+    /* margin-left: 10px !important; */
+    /* margin-right: 10px !important; */
+  }
+
+  .indexLeft {
+    /* margin-left: 10px !important; */
+    /* margin-right: 10px !important; */
+  }
+
+  .indexVideoPlayer {
+    max-width: 600px !important;
+    width: 100% !important;
+  }
+  .topicMain {
+    margin-top: 5vw;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    text-align: left;
+    max-width: 800px !important;
+  }
   .paperMain {
     width: 100%;
     margin-top: 5vw;
@@ -140,7 +240,6 @@
 
 @media screen and (min-width: 1100px) {
   .indexMain {
-    /* margin: 10vw; */
     margin-top: 5vw;
     margin-bottom: 5vw;
 
@@ -157,9 +256,22 @@
   .indexLeft {
     margin-right: auto;
   }
+
+  .indexVideoPlayer {
+    width: 100% !important;
+    height: 450px !important;
+  }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 400px) {
+  .topicMain {
+    margin: 1vw;
+    margin-top: 5vw;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    text-align: left;
+  }
   .indexMain {
     margin-top: 5vw;
     margin-bottom: 5vw;
@@ -169,15 +281,20 @@
     flex-wrap: wrap;
     align-items: center;
     text-align: left;
+    max-width: 800px !important;
   }
 
   .indexRight {
-    margin-left: 10px !important;
-    margin-right: 10px !important;
+    /* margin-left: 10px !important; */
+    /* margin-right: 10px !important; */
   }
 
   .indexLeft {
-    margin-left: 10px !important;
+    /* margin-left: 10px !important; */
     margin-right: 10px !important;
+  }
+
+  .indexVideoPlayer {
+    width: 350px;
   }
 }

@@ -12,7 +12,6 @@ import AuthorDetails from "../components/Content/新洲雅苑懷舊集AuthorDeta
 export default function topicTemplate({ pageContext: { topic } }) {
   function getYear(aut) {
     const getAuthor = authors.filter(author => author.fullName === aut)
-    console.log(getAuthor)
     if (getAuthor.length === 0) {
       return ""
     } else if (
@@ -29,7 +28,7 @@ export default function topicTemplate({ pageContext: { topic } }) {
       getAuthor[0].yearOfBirth !== null &&
       getAuthor[0].yearOfDeath === null
     ) {
-      return " ( " + getAuthor[0].yearOfBirth + " - " + "? )"
+      return " ( " + getAuthor[0].yearOfBirth + " - ? )"
     } else if (getAuthor[0].yearOfDeath === "0") {
       return " ( " + getAuthor[0].yearOfBirth + " - )"
     } else {
@@ -45,19 +44,15 @@ export default function topicTemplate({ pageContext: { topic } }) {
   function getSlideImage() {
     const getTopic = topicData.filter(data => data.chn_name === topic.chn_name)
     const slideImageArray = getTopic[0].slider
-    console.log(slideImageArray)
     return slideImageArray
   }
 
   function getSlideImageData(photo) {
-    console.log(photo)
     const getPhoto = topicSliderData.filter(data => data.slider === photo)
-    console.log(getPhoto)
     var dataDict = {}
     dataDict["Tag"] = getPhoto[0].Tag
     dataDict["Title"] = getPhoto[0].Title
     dataDict["Content"] = getPhoto[0].Content
-    console.log(dataDict)
     return dataDict
   }
 
@@ -83,7 +78,6 @@ export default function topicTemplate({ pageContext: { topic } }) {
         dict[poem.author_name].push(poem)
       }
     }
-    console.log(dict)
     return dict
   }
   const sortedData = getSortedNYFT()
@@ -94,7 +88,7 @@ export default function topicTemplate({ pageContext: { topic } }) {
     <div>
       <img
         src={require(`../images/logo/${topic.logo_url}`).default}
-        alt="logo image"
+        alt="logo"
         className={logoImage}
       ></img>
 
@@ -170,6 +164,7 @@ export default function topicTemplate({ pageContext: { topic } }) {
                 {topic.blog_img ? (
                   <img
                     src={require(`../images/blog/${topic.blog_img}`).default}
+                    alt="blog"
                     style={{
                       width: "100%",
                       maxWidth: "100%",
@@ -194,7 +189,7 @@ export default function topicTemplate({ pageContext: { topic } }) {
 
               {final.length !== 0 ? (
                 final.map((author, i) => (
-                  <div style={{ margin: "30px" }}>
+                  <div style={{ margin: "30px" }} key={i}>
                     <h4 style={{ marginBottom: "20px" }}>
                       {author[0]}
                       {getYear(author[0])}
@@ -205,8 +200,11 @@ export default function topicTemplate({ pageContext: { topic } }) {
                       ""
                     )}
 
-                    {author[1].map(poem => (
-                      <a href={`/poem/${poem.author_name}/${poem.title}`}>
+                    {author[1].map((poem, i) => (
+                      <a
+                        href={`/poem/${poem.author_name}/${poem.title}`}
+                        key={i}
+                      >
                         <button
                           className={"btn btn-outline-dark rounded-0"}
                           type="button"

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import {
   topicMain,
   logoImage,
@@ -14,7 +14,6 @@ import authors from "../../data/Poet.json"
 const 詩人吟唱 = () => {
   function getYear(aut) {
     const getAuthor = authors.filter(author => author.fullName === aut)
-    console.log(getAuthor)
     if (getAuthor.length === 0) {
       return ""
     } else if (
@@ -26,12 +25,12 @@ const 詩人吟唱 = () => {
       getAuthor[0].yearOfBirth === null &&
       getAuthor[0].yearOfDeath !== null
     ) {
-      return " ( ?" + " - " + getAuthor[0].yearOfDeath + " )"
+      return " ( ? - " + getAuthor[0].yearOfDeath + " )"
     } else if (
       getAuthor[0].yearOfBirth !== null &&
       getAuthor[0].yearOfDeath === null
     ) {
-      return " ( " + getAuthor[0].yearOfBirth + " - " + "? )"
+      return " ( " + getAuthor[0].yearOfBirth + " - ? )"
     } else if (getAuthor[0].yearOfDeath === "0") {
       return " ( " + getAuthor[0].yearOfBirth + " - )"
     } else {
@@ -65,11 +64,10 @@ const 詩人吟唱 = () => {
         dict[video.author].push(video)
       }
     }
-    console.log(dict)
     return dict
   }
 
-  const [allVid, setAllVid] = useState(Object.entries(getSortedNYFT()))
+  const [allVid] = useState(Object.entries(getSortedNYFT()))
 
   const [currVid, setCurrVid] = useState(
     allVid.map(data => data[1][0].link.substring(15))
@@ -77,7 +75,6 @@ const 詩人吟唱 = () => {
 
   function changeCurrVid(link, index) {
     const realLink = link.substring(15)
-    console.log(currVid)
     const temp = currVid.map((x, i) => (i === index ? realLink : x))
     setCurrVid(temp)
   }
@@ -86,7 +83,7 @@ const 詩人吟唱 = () => {
     <div>
       <img
         src={require(`../../images/logo/logo-shirenyinchang.png`).default}
-        alt="logo image"
+        alt="logo"
         className={logoImage}
       ></img>
       <Layout>
@@ -95,7 +92,7 @@ const 詩人吟唱 = () => {
           <div className={topicMain}>
             {allVid !== undefined &&
               allVid.map((data, index) => (
-                <div>
+                <div key={index}>
                   <h4 style={{ marginTop: "60px" }}>
                     {data[0]}
                     {getYear(data[0])}
@@ -106,8 +103,9 @@ const 詩人吟唱 = () => {
                     controls={true}
                     className={indexVideoPlayer}
                   />
-                  {data[1].map(video => (
+                  {data[1].map((video, i) => (
                     <button
+                      key={i}
                       onClick={() => changeCurrVid(video.link, index)}
                       className={"btn btn-outline-dark rounded-0"}
                       type="button"

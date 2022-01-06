@@ -9,10 +9,6 @@ import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import "bootstrap/dist/css/bootstrap.min.css"
 import {
-  indexMain,
-  indexRight,
-  indexLeft,
-  poemDiv,
   homepageAuthor,
   homepageAuthorImage,
   poemAuthorTitle,
@@ -73,20 +69,20 @@ const AboutUs = () => {
           className={youtubeLink}
           href={"https://www.youtube.com/channel/UC4gHVnJB2rzTLti1vpkC4mQ"}
         >
-          <AiOutlineYoutube /> 前往新加玻舊體詩庫Youtube頻道
+          <AiOutlineYoutube /> 前往新加坡舊體詩庫Youtube頻道
         </a>
       </div>
       <img
         src={require(`../../images/logo/logo-aboutus.png`).default}
-        alt="logo image"
+        alt="logo"
         className={logoImage}
       ></img>
       <Layout>
         <Seo title="Home" />
         <Container>
           <div>
-            <div class="row" className={aboutUsMain}>
-              <div class="col-8" className={aboutUsLeft}>
+            <div className={aboutUsMain}>
+              <div className={aboutUsLeft}>
                 <div className={homepageAuthor}>
                   <h4 className={poemAuthorTitle}>網站建設團隊</h4>
                   <h6 className={poemAuthorTitle}>網站主編: 林立</h6>
@@ -111,10 +107,11 @@ const AboutUs = () => {
                 </div>
               </div>
 
-              <div class="col-4" className={aboutUsRight}>
+              <div className={aboutUsRight}>
                 <div className={homepageAuthor}>
                   <img
                     src={require(`../../images/img-prof.jpg`).default}
+                    alt={"author"}
                     className={homepageAuthorImage}
                   ></img>
                   <br />
@@ -146,6 +143,7 @@ const AboutUs = () => {
                   </p>
 
                   <img
+                    alt={"signature"}
                     src={
                       require(`../../images/poet/signature-image.png`).default
                     }
@@ -153,7 +151,7 @@ const AboutUs = () => {
                   <br />
                   <br />
                   <a href={`/others/aboutUs`}>
-                    <button class="btn btn-outline-dark rounded-0">
+                    <button className={"btn btn-outline-dark rounded-0"}>
                       Read More
                     </button>
                   </a>
@@ -162,6 +160,7 @@ const AboutUs = () => {
                   <h3>出版著作</h3>
                   {books.map((book, i) => (
                     <div
+                      key={i}
                       style={{
                         display: "flex",
                         flexDirection: "row",
@@ -174,6 +173,7 @@ const AboutUs = () => {
                             .default
                         }
                         style={{ width: "80px", height: "20%" }}
+                        alt={"bookcover"}
                       />
                       <div
                         style={{
@@ -184,7 +184,7 @@ const AboutUs = () => {
                       >
                         <a href={`/others/aboutUs`}>
                           <button
-                            class="btn btn-outline-dark rounded-0"
+                            className={"btn btn-outline-dark rounded-0"}
                             style={{ padding: "0px !important" }}
                           >
                             {book.publisher}

@@ -2,8 +2,8 @@ import React from "react"
 import {
   poemDiv,
   poemAuthorTitle,
-  poemContent,
   poemMain,
+  logoImage,
 } from "../../../style.module.css"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
@@ -186,49 +186,59 @@ const BambooBranchVersesOfSingapore = () => {
   ]
 
   return (
-    <Layout>
-      <Seo title="Home" />
-      <Container>
-        <div className={poemMain}>
-          <div className={poemDiv}>
-            <h4 className={poemAuthorTitle}>
-              新加坡竹枝词英译 Bamboo Branch Verses of Singapore
-            </h4>
-            <h5 className={poemAuthorTitle}>林立 侯海（Allen Haaheim）</h5>
-            <hr />
-            {translations.map((translation, i) => (
-              <div style={{ margin: "60px 20px" }}>
-                <h5>{translation.englishTitle}</h5>
-                <h5>{translation.chineseTitle}</h5>
-                <br />
-                {translation.content.map((con, i) => (
-                  <div>
-                    <p>{con.englishContent}</p>
-                    <p>{con.chineseContent}</p>
-                    <br />
-                  </div>
-                ))}
+    <div>
+      <img
+        src={require(`../../images/logo/logo-sgjiutishiyingze.png`).default}
+        alt="logo"
+        className={logoImage}
+      ></img>
+      <Layout>
+        <Seo title="Home" />
+        <Container>
+          <div className={poemMain}>
+            <div className={poemDiv}>
+              <h4 className={poemAuthorTitle}>
+                新加坡竹枝词英译 Bamboo Branch Verses of Singapore
+              </h4>
+              <h5 className={poemAuthorTitle}>林立 侯海（Allen Haaheim）</h5>
+              <hr />
+              {translations.map((translation, i) => (
+                <div key={i} style={{ margin: "60px 20px" }}>
+                  <h5>{translation.englishTitle}</h5>
+                  <h5>{translation.chineseTitle}</h5>
+                  <br />
+                  {translation.content.map((con, i) => (
+                    <div key={i}>
+                      <p>{con.englishContent}</p>
+                      <p>{con.chineseContent}</p>
+                      <br />
+                    </div>
+                  ))}
 
-                <span>{translation.notes}</span>
+                  <span>{translation.notes}</span>
 
-                <i>{translation.info}</i>
-                <br />
-                <br />
-                <hr />
-              </div>
-            ))}
+                  <i>{translation.info}</i>
+                  <br />
+                  <br />
+                  <hr />
+                </div>
+              ))}
+            </div>
+            <a
+              href={`/新加坡舊體詩英譯`}
+              style={{ alignSelf: "center", marginBottom: "50px" }}
+            >
+              <button
+                className={"btn btn-outline-dark rounded-0"}
+                type="button"
+              >
+                返回上頁
+              </button>
+            </a>
           </div>
-          <a
-            href={`/新加坡舊體詩英譯`}
-            style={{ alignSelf: "center", marginBottom: "50px" }}
-          >
-            <button className={"btn btn-outline-dark rounded-0"} type="button">
-              返回上頁
-            </button>
-          </a>
-        </div>
-      </Container>
-    </Layout>
+        </Container>
+      </Layout>
+    </div>
   )
 }
 

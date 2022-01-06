@@ -21,7 +21,7 @@ const IndexPage = () => {
     <div>
       <img
         src={require(`../images/logo/logo.png`).default}
-        alt="logo image"
+        alt="logo"
         className={logoImage}
       ></img>
 
@@ -30,16 +30,12 @@ const IndexPage = () => {
         <HomepageSlider></HomepageSlider>
         <Container>
           <div>
-            <div class="row" className={indexMain}>
-              <div class="col-8" className={indexLeft}>
+            <div className={indexMain}>
+              <div className={indexLeft}>
                 <HomepageArticle />
               </div>
 
-              <div
-                class="col-4"
-                className={indexRight}
-                style={{ minWidth: "300px" }}
-              >
+              <div className={indexRight} style={{ minWidth: "300px" }}>
                 <HomepageAuthor />
                 <ExternalLink />
               </div>

@@ -2,8 +2,8 @@ import React from "react"
 import {
   poemDiv,
   poemAuthorTitle,
-  poemContent,
   poemMain,
+  logoImage,
 } from "../../../style.module.css"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
@@ -253,56 +253,68 @@ const 邱菽园竹枝词英译 = () => {
   ]
 
   return (
-    <Layout>
-      <Seo title="Home" />
-      <Container>
-        <div className={poemMain}>
-          <div className={poemDiv}>
-            <h4 className={poemAuthorTitle}>邱菽园竹枝词英译</h4>
-            <h6 className={poemAuthorTitle}>林立</h6>
-            <hr />
-            {translations.map((translation, i) => (
-              <div style={{ margin: "60px 20px" }}>
-                <h5>{translation.englishTitle}</h5>
-                <h5>{translation.chineseTitle}</h5>
-                <br />
-                {translation.content.map((con, i) => (
-                  <div>
-                    <p style={{ whiteSpace: "pre-line" }}>
-                      {con.englishContent}
-                    </p>
-                    <p style={{ whiteSpace: "pre-line" }}>
-                      {con.chineseContent}
-                    </p>
-                    <br />
-                  </div>
-                ))}
-                <i>{translation.info}</i>
-                <br />
-                <br />
-                <span style={{ fontSize: "0.8rem" }}>{translation.notes}</span>
+    <div>
+      <img
+        src={require(`../../images/logo/logo-sgjiutishiyingze.png`).default}
+        alt="logo"
+        className={logoImage}
+      ></img>
+      <Layout>
+        <Seo title="Home" />
+        <Container>
+          <div className={poemMain}>
+            <div className={poemDiv}>
+              <h4 className={poemAuthorTitle}>邱菽园竹枝词英译</h4>
+              <h6 className={poemAuthorTitle}>林立</h6>
+              <hr />
+              {translations.map((translation, i) => (
+                <div key={i} style={{ margin: "60px 20px" }}>
+                  <h5>{translation.englishTitle}</h5>
+                  <h5>{translation.chineseTitle}</h5>
+                  <br />
+                  {translation.content.map((con, i) => (
+                    <div key={i}>
+                      <p style={{ whiteSpace: "pre-line" }}>
+                        {con.englishContent}
+                      </p>
+                      <p style={{ whiteSpace: "pre-line" }}>
+                        {con.chineseContent}
+                      </p>
+                      <br />
+                    </div>
+                  ))}
+                  <i>{translation.info}</i>
+                  <br />
+                  <br />
+                  <span style={{ fontSize: "0.8rem" }}>
+                    {translation.notes}
+                  </span>
 
-                <hr />
-              </div>
-            ))}
-            {footers.map((footer, i) => (
-              <div style={{ margin: "30px 0px" }}>
-                <span style={{ fontSize: "0.75rem" }}>{footer}</span>
-                <br />
-              </div>
-            ))}
+                  <hr />
+                </div>
+              ))}
+              {footers.map((footer, i) => (
+                <div key={i} style={{ margin: "30px 0px" }}>
+                  <span style={{ fontSize: "0.75rem" }}>{footer}</span>
+                  <br />
+                </div>
+              ))}
+            </div>
+            <a
+              href={`/新加坡舊體詩英譯`}
+              style={{ alignSelf: "center", marginBottom: "50px" }}
+            >
+              <button
+                className={"btn btn-outline-dark rounded-0"}
+                type="button"
+              >
+                返回上頁
+              </button>
+            </a>
           </div>
-          <a
-            href={`/新加坡舊體詩英譯`}
-            style={{ alignSelf: "center", marginBottom: "50px" }}
-          >
-            <button className={"btn btn-outline-dark rounded-0"} type="button">
-              返回上頁
-            </button>
-          </a>
-        </div>
-      </Container>
-    </Layout>
+        </Container>
+      </Layout>
+    </div>
   )
 }
 

@@ -24,7 +24,7 @@ export default function Poem({ pageContext: { poem } }) {
     <div>
       <img
         src={require(`../images/logo/${logo}`).default}
-        alt="logo image"
+        alt="logo"
         className={logoImage}
       ></img>
       <Layout>

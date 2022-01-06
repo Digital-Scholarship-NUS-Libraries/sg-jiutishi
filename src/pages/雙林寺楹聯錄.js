@@ -2,7 +2,6 @@ import React from "react"
 import {
   poemDiv,
   poemAuthorTitle,
-  poemContent,
   poemMain,
   logoImage,
 } from "../../style.module.css"
@@ -16,7 +15,7 @@ const 雙林寺楹聯錄 = () => {
     <div>
       <img
         src={require(`../images/logo/logo-shuanglinsiyinglianlu.png`).default}
-        alt="logo image"
+        alt="logo"
         className={logoImage}
       ></img>
       <Layout>
@@ -39,7 +38,7 @@ const 雙林寺楹聯錄 = () => {
               <Table bordered hover size="sm" style={{ marginTop: "20px" }}>
                 <thead>
                   <tr>
-                    <th></th>
+                    <th> </th>
                     <th>楹联內容</th>
                     <th>年份</th>
                     <th>位置</th>
@@ -49,7 +48,7 @@ const 雙林寺楹聯錄 = () => {
                 </thead>
                 <tbody>
                   {data.map((entry, i) => (
-                    <tr>
+                    <tr key={i}>
                       <td>{entry.key}</td>
                       <td
                         style={{

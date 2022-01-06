@@ -48,10 +48,11 @@ const HomepageAuthor = () => {
   return (
     <div>
       {authors.map((author, i) => (
-        <div className={homepageAuthor}>
+        <div key={i} className={homepageAuthor}>
           <img
             src={require(`../../images/poet/${author.poetPicture}`).default}
             className={homepageAuthorImage}
+            alt="poet profile"
           ></img>
           <h4>{author.name}</h4>
           <br />
@@ -61,6 +62,7 @@ const HomepageAuthor = () => {
             <div>
               <img
                 src={require(`../../images/poet/${author.signature}`).default}
+                alt={"author signature"}
               ></img>
               <br />
             </div>
@@ -69,7 +71,7 @@ const HomepageAuthor = () => {
           )}
           <br />
           <a href={`${author.collectionURL}`}>
-            <button class="btn btn-outline-dark rounded-0">
+            <button className={"btn btn-outline-dark rounded-0"}>
               {author.collectionName}
             </button>
           </a>

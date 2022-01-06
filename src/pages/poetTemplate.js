@@ -1,6 +1,5 @@
 import * as React from "react"
-import { useState } from "react"
-import { Container, ToggleButton } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -10,22 +9,6 @@ import Poet from "../data/Poet.json"
 export default function PoetTemplate({ pageContext: { char } }) {
   const [poets, setPoets] = React.useState([])
 
-  React.useEffect(() => {
-    setReadingMore(poets.map(x => false))
-  }, [poets])
-
-  React.useEffect(() => {
-    setPoets(getPoets())
-  }, [])
-
-  function sortByProperty(property) {
-    return function (a, b) {
-      if (a[property] > b[property]) return 1
-      else if (a[property] < b[property]) return -1
-      return 0
-    }
-  }
-
   function getPoets() {
     if (char === "全部") {
       const filtered = Poet.filter(poet => char !== poet.pinyin)
@@ -34,9 +17,25 @@ export default function PoetTemplate({ pageContext: { char } }) {
       return filteredSorted
     } else {
       const filtered = Poet.filter(poet => char === poet.pinyin.toUpperCase())
-      console.log(filtered)
       // setReadingMore(filtered.map(x => false))
       return filtered
+    }
+  }
+
+  React.useEffect(() => {
+    setReadingMore(poets.map(x => false))
+  }, [poets])
+
+  React.useEffect(() => {
+    setPoets(getPoets())
+    //eslint-disable-next-line
+  }, [])
+
+  function sortByProperty(property) {
+    return function (a, b) {
+      if (a[property] > b[property]) return 1
+      else if (a[property] < b[property]) return -1
+      return 0
     }
   }
 
@@ -72,16 +71,15 @@ export default function PoetTemplate({ pageContext: { char } }) {
 
   const [isReadingMore, setReadingMore] = React.useState(null)
   function toggleReadingMore(index) {
-    const temp = isReadingMore.map((x, i) => (i == index ? !x : x))
+    const temp = isReadingMore.map((x, i) => (i === index ? !x : x))
     setReadingMore(temp)
-    console.log(isReadingMore)
   }
 
   return (
     <div>
       <img
         src={require(`../images/logo/logo-shirenjianjie.png`).default}
-        alt="logo image"
+        alt="logo"
         className={logoImage}
       ></img>
       <Layout>
@@ -97,8 +95,9 @@ export default function PoetTemplate({ pageContext: { char } }) {
                 marginBottom: "0px",
               }}
             >
-              {alphabets.map((alphabet, idx) => (
+              {alphabets.map((alphabet, i) => (
                 <a
+                  key={i}
                   href={`/poet/${alphabet}`}
                   style={{ textDecoration: "none", color: "black" }}
                 >
@@ -111,7 +110,7 @@ export default function PoetTemplate({ pageContext: { char } }) {
             <div className={topicMain}>
               {poets.length !== 0 && isReadingMore !== null ? (
                 poets.map((poet, i) => (
-                  <div style={{ margin: "30px" }}>
+                  <div key={i} style={{ margin: "30px" }}>
                     <h4 style={{ marginBottom: "20px" }}>{poet.fullName}</h4>
                     {poet.photo_link ? (
                       <div
@@ -127,7 +126,7 @@ export default function PoetTemplate({ pageContext: { char } }) {
                             require(`../images/poet/${poet.photo_link}`).default
                           }
                           style={{ margin: "0px auto 20px", maxWidth: "200px" }}
-                          alt={"poet-photo"}
+                          alt={"poet"}
                         ></img>
                         <span>{poet.fullName}先生的照片</span>
                       </div>
@@ -171,7 +170,7 @@ export default function PoetTemplate({ pageContext: { char } }) {
                         () => toggleReadingMore(i)
                         // setReadingMore(isReadingMore[i] ? false : true)
                       }
-                      class="btn btn-outline-dark rounded-0"
+                      className={"btn btn-outline-dark rounded-0"}
                       id="myBtn"
                       style={{ marginTop: "10px" }}
                     >

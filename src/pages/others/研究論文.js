@@ -1,9 +1,10 @@
 import React from "react"
-import { topicMain, logoImage } from "../../../style.module.css"
+import data from "../../data/Paper.json"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
-import { Container, Carousel, Image } from "react-bootstrap"
-import data from "../../data/Paper.json"
+import { Container } from "react-bootstrap"
+
+import { topicMain, logoImage } from "../../../style.module.css"
 
 const 研究論文 = () => {
   function sortByProperty(property) {
@@ -27,7 +28,6 @@ const 研究論文 = () => {
         dict[poem.author].push(poem)
       }
     }
-    console.log(dict)
     return dict
   }
   const sortedData = getSortedNYFT()
@@ -37,7 +37,7 @@ const 研究論文 = () => {
     <div>
       <img
         src={require(`../../images/logo/logo-yanjiulunwen.png`).default}
-        alt="logo image"
+        alt="logo"
         className={logoImage}
       ></img>
 
@@ -48,11 +48,11 @@ const 研究論文 = () => {
           <div>
             <div className={topicMain}>
               {final.map((author, i) => (
-                <div style={{ margin: "30px" }}>
+                <div style={{ margin: "30px" }} key={i}>
                   <h4 style={{ marginBottom: "20px" }}>{author[0]}</h4>
 
-                  {author[1].map(poem => (
-                    <a href={`/paper/${poem.author}/${poem.title}`}>
+                  {author[1].map((poem, i) => (
+                    <a href={`/paper/${poem.author}/${poem.title}`} key={i}>
                       <button
                         className={"btn btn-outline-dark rounded-0"}
                         type="button"

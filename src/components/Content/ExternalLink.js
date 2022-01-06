@@ -31,8 +31,8 @@ const ExternalLink = () => {
   return (
     <div style={{ margin: "30px" }}>
       <h3>友情鏈接</h3>
-      {links.map(link => (
-        <a href={link.url}>
+      {links.map((link, i) => (
+        <a key={i} href={link.url}>
           <button
             className={"btn btn-outline-dark rounded-0"}
             type="button"

@@ -1,11 +1,5 @@
 import React from "react"
-import {
-  poemDiv,
-  poemAuthorTitle,
-  poemContent,
-  poemMain,
-  logoImage,
-} from "../../../style.module.css"
+import { poemDiv, poemContent } from "../../../style.module.css"
 import authors from "../../data/Poet.json"
 
 export default function AuthorDetails(poet) {

@@ -1,4 +1,3 @@
-import { faTemperatureHigh } from "@fortawesome/free-solid-svg-icons"
 import * as React from "react"
 import ReactPlayer from "react-player"
 import { indexVideoPlayer } from "../../../style.module.css"
@@ -101,9 +100,8 @@ const HomepageArticle = () => {
     articles.map(x => false)
   )
   function toggleReadingMore(index) {
-    const temp = isReadingMore.map((x, i) => (i == index ? !x : x))
+    const temp = isReadingMore.map((x, i) => (i === index ? !x : x))
     setReadingMore(temp)
-    console.log(isReadingMore)
   }
 
   return (
@@ -114,7 +112,7 @@ const HomepageArticle = () => {
       }}
     >
       {articles.map((article, i) => (
-        <div style={{ marginBottom: "30px" }}>
+        <div key={i} style={{ marginBottom: "30px" }}>
           <hr></hr>
           <h3>{article.heading}</h3>
           <br />
@@ -134,7 +132,7 @@ const HomepageArticle = () => {
               >
                 <div>
                   {article.description.map((element, i) => (
-                    <div>
+                    <div key={i}>
                       {element.type === "text" ? (
                         <p
                           style={{
@@ -154,6 +152,7 @@ const HomepageArticle = () => {
                                 .default
                             }
                             style={{ width: "100%", marginBottom: "5px" }}
+                            alt={"article info"}
                           />
                           <span>{element.caption}</span>
                         </div>
@@ -185,7 +184,7 @@ const HomepageArticle = () => {
               </div>
               <button
                 onClick={() => toggleReadingMore(i)}
-                class="btn btn-outline-dark rounded-0"
+                className={"btn btn-outline-dark rounded-0"}
                 id="myBtn"
                 style={{ marginTop: "30px" }}
               >
@@ -196,7 +195,7 @@ const HomepageArticle = () => {
             <div style={{ maxWidth: "100%" }}>
               <div>
                 {article.description.map((element, i) => (
-                  <div>
+                  <div key={i}>
                     {element.type === "text" ? (
                       <p
                         style={{
@@ -215,6 +214,7 @@ const HomepageArticle = () => {
                               .default
                           }
                           style={{ width: "100%", marginBottom: "5px" }}
+                          alt={"article info"}
                         />
                         <span>{element.caption}</span>
                       </div>

@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import * as styles from "./Navbar.module.scss"
-import { Container, Row, Col, Nav, Navbar, NavDropdown } from "react-bootstrap"
-import { navbarControl, navbarControlOriginal } from "../../../style.module.css"
+import { Container, Nav, NavDropdown } from "react-bootstrap"
 
 function HoverControlledDropdown(props) {
   const [isHovered, setIsHovered] = useState(false)
@@ -51,8 +50,6 @@ export default function NavBar({ menuItems }) {
     { title: "其他", url: "詩社" },
   ]
 
-  const handleSelect = eventKey => alert(`selected ${eventKey}`)
-
   return (
     <Container className={styles.navbar}>
       <Nav style={{ justifyContent: "center" }} className={"me-auto"}>
@@ -64,14 +61,14 @@ export default function NavBar({ menuItems }) {
 
         <HoverControlledDropdown className={styles.navItem} title="專題">
           {zhuantis.map((zhuanti, i) => (
-            <NavDropdown.Item href={`/${zhuanti.url}`} target="_self">
+            <NavDropdown.Item key={i} href={`/${zhuanti.url}`} target="_self">
               {zhuanti.title}
             </NavDropdown.Item>
           ))}
         </HoverControlledDropdown>
 
         {topics.map((topic, i) => (
-          <Nav.Item>
+          <Nav.Item key={i}>
             <Nav.Link className={styles.navItem} href={`/${topic.url}`}>
               {topic.title}
             </Nav.Link>
@@ -80,7 +77,7 @@ export default function NavBar({ menuItems }) {
 
         <HoverControlledDropdown className={styles.navItem} title="詩社">
           {societies.map((society, i) => (
-            <NavDropdown.Item href={`/${society.url}`} target="_self">
+            <NavDropdown.Item key={i} href={`/${society.url}`} target="_self">
               {society.title}
             </NavDropdown.Item>
           ))}

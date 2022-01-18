@@ -4,5 +4,5 @@
   </a>
 </p>
 <h1 align="center">
-  NUS Libraries Gatsby starter
+  新加坡舊體詩庫
 </h1>

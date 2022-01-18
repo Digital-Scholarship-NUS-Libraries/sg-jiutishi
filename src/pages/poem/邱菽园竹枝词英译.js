@@ -260,7 +260,7 @@ const 邱菽园竹枝词英译 = () => {
         className={logoImage}
       ></img>
       <Layout>
-        <Seo title="Home" />
+        <Seo title="邱菽园竹枝词英译" />
         <Container>
           <div className={poemMain}>
             <div className={poemDiv}>

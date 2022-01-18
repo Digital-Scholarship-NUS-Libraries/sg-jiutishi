@@ -83,7 +83,7 @@ export default function PoetTemplate({ pageContext: { char } }) {
         className={logoImage}
       ></img>
       <Layout>
-        <Seo title="Poet Template" />
+        <Seo title="詩人簡介" />
         <Container>
           <div>
             <div

@@ -193,7 +193,7 @@ const BambooBranchVersesOfSingapore = () => {
         className={logoImage}
       ></img>
       <Layout>
-        <Seo title="Home" />
+        <Seo title="新加坡竹枝词英译" />
         <Container>
           <div className={poemMain}>
             <div className={poemDiv}>

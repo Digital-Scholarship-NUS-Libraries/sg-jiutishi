@@ -19,7 +19,7 @@ const 雙林寺楹聯錄 = () => {
         className={logoImage}
       ></img>
       <Layout>
-        <Seo title="Home" />
+        <Seo title="雙林寺楹聯錄" />
         <Container>
           <div className={poemMain}>
             <div className={poemDiv}>

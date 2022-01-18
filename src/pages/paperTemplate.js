@@ -13,7 +13,7 @@ export default function Paper({ pageContext: { paper } }) {
         className={logoImage}
       ></img>
       <Layout>
-        <Seo title="Home" />
+        <Seo title={paper.title} />
         <Container>
           <div className={paperMain}>
             <div>

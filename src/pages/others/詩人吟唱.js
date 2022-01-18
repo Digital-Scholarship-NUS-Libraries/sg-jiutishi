@@ -87,7 +87,7 @@ const 詩人吟唱 = () => {
         className={logoImage}
       ></img>
       <Layout>
-        <Seo title="Home" />
+        <Seo title="詩人吟唱" />
         <Container>
           <div className={topicMain}>
             {allVid !== undefined &&

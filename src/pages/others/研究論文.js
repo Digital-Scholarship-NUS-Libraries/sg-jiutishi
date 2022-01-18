@@ -42,7 +42,7 @@ const 研究論文 = () => {
       ></img>
 
       <Layout>
-        <Seo title="Home" />
+        <Seo title="研究論文" />
 
         <Container>
           <div>

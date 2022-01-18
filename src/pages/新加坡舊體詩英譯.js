@@ -13,7 +13,7 @@ const 新加坡舊體詩英譯 = () => {
         className={logoImage}
       ></img>
       <Layout>
-        <Seo title="Home" />
+        <Seo title="新加坡舊體詩英譯" />
 
         <Container>
           <div>

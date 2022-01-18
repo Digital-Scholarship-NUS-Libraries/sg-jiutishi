@@ -78,7 +78,7 @@ const AboutUs = () => {
         className={logoImage}
       ></img>
       <Layout>
-        <Seo title="Home" />
+        <Seo title="關於我們" />
         <Container>
           <div>
             <div className={aboutUsMain}>

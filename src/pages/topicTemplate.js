@@ -93,7 +93,7 @@ export default function topicTemplate({ pageContext: { topic } }) {
       ></img>
 
       <Layout>
-        <Seo title="Home" />
+        <Seo title={topic.chn_name} />
 
         {slideImage ? (
           <Carousel>

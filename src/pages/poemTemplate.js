@@ -28,13 +28,22 @@ export default function Poem({ pageContext: { poem } }) {
         className={logoImage}
       ></img>
       <Layout>
-        <Seo title="Home" />
+        <Seo title={poem.title} />
         <Container>
           <div className={poemMain}>
             <div className={poemDiv}>
               <h4 className={poemAuthorTitle}>{poem.title}</h4>
               <h6 className={poemAuthorTitle}>{poem.author_name}</h6>
+              <br />
+              <p className={poemAuthorTitle}>
+                {poem.introduction ? poem.introduction : ""}
+              </p>
+              <br />
               <p className={poemContent}>{poem.content}</p>
+              <br />
+              <p className={poemAuthorTitle}>
+                {poem.comments ? poem.comments : ""}
+              </p>
               <br />
               <h6 className={poemAuthorTitle}>{poem.published_info}</h6>
             </div>

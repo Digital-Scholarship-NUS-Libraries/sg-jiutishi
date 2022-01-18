@@ -26,7 +26,7 @@ const IndexPage = () => {
       ></img>
 
       <Layout>
-        <Seo title="Home" />
+        <Seo title="主頁" />
         <HomepageSlider></HomepageSlider>
         <Container>
           <div>

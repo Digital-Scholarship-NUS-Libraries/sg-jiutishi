@@ -2,7 +2,8 @@ import * as React from "react"
 import { Container } from "react-bootstrap"
 import Content from "../../components/Content/Content.js"
 import { AiOutlineYoutube } from "@react-icons/all-files/ai/AiOutlineYoutube"
-
+import { BackToTopButton } from "../../components/Content/BackToTopButton.js"
+import { StaticImage } from "gatsby-plugin-image"
 import ReactPlayer from "react-player"
 
 import Layout from "../../components/layout"
@@ -72,11 +73,12 @@ const AboutUs = () => {
           <AiOutlineYoutube /> 前往新加坡舊體詩庫Youtube頻道
         </a>
       </div>
-      <img
-        src={require(`../../images/logo/logo-aboutus.png`).default}
-        alt="logo"
-        className={logoImage}
-      ></img>
+      <div className={logoImage}>
+        <StaticImage
+          src={`../../images/logo/logo-aboutus.png`}
+          alt="logo"
+        ></StaticImage>
+      </div>
       <Layout>
         <Seo title="關於我們" />
         <Container>
@@ -109,11 +111,16 @@ const AboutUs = () => {
 
               <div className={aboutUsRight}>
                 <div className={homepageAuthor}>
-                  <img
-                    src={require(`../../images/img-prof.jpg`).default}
-                    alt={"author"}
+                  <div
                     className={homepageAuthorImage}
-                  ></img>
+                    style={{ marginLeft: "auto", marginRight: "auto" }}
+                  >
+                    <StaticImage
+                      src={`../../images/img-prof.jpg`}
+                      alt={"author"}
+                      // imgClassName={homepageAuthorImage}
+                    ></StaticImage>
+                  </div>
                   <br />
 
                   <h4>Lam Lap(林立)</h4>
@@ -142,12 +149,10 @@ const AboutUs = () => {
                     4.《獅城心影錄：中大人在新加坡》(主編)，香港：天地圖書，2013年。
                   </p>
 
-                  <img
+                  <StaticImage
                     alt={"signature"}
-                    src={
-                      require(`../../images/poet/signature-image.png`).default
-                    }
-                  ></img>
+                    src={`../../images/poet/signature-image.png`}
+                  />
                   <br />
                   <br />
                   <a href={`/others/aboutUs`}>
@@ -167,14 +172,12 @@ const AboutUs = () => {
                         margin: "30px 0px",
                       }}
                     >
-                      <img
-                        src={
-                          require(`../../images/aboutme-bookcover-1.jpg`)
-                            .default
-                        }
-                        style={{ width: "80px", height: "20%" }}
-                        alt={"bookcover"}
-                      />
+                      <div style={{ width: "80px", height: "20%" }}>
+                        <StaticImage
+                          src={`../../images/aboutme-bookcover-1.jpg`}
+                          alt={"bookcover"}
+                        />
+                      </div>
                       <div
                         style={{
                           display: "flex",
@@ -199,9 +202,10 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
+          <BackToTopButton></BackToTopButton>
         </Container>
 
-        <Content />
+        {/* <Content /> */}
       </Layout>
     </div>
   )

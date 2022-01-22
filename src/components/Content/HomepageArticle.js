@@ -31,17 +31,6 @@ const HomepageArticle = () => {
       ],
     },
     {
-      key: 2,
-      heading: "【經典】紅樓夢主題曲《枉凝眉》",
-      subheading: "",
-      date: "",
-      maintype: "video",
-      fixedDescription: "",
-      description: [
-        { type: "video", info: "https://www.youtube.com/watch?v=DhF6ByW_WMI" },
-      ],
-    },
-    {
       key: 3,
       heading: "新加坡華文舊體詩的百年風雅",
       subheading: "文/林立(新加坡國立大學副教授) 來自/光明日報",

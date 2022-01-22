@@ -5,6 +5,8 @@ import Seo from "../components/seo"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { alphabetList, logoImage, topicMain } from "../../style.module.css"
 import Poet from "../data/Poet.json"
+import { BackToTopButton } from "../components/Content/BackToTopButton.js"
+import { StaticImage } from "gatsby-plugin-image"
 
 export default function PoetTemplate({ pageContext: { char } }) {
   const [poets, setPoets] = React.useState([])
@@ -77,11 +79,12 @@ export default function PoetTemplate({ pageContext: { char } }) {
 
   return (
     <div>
-      <img
-        src={require(`../images/logo/logo-shirenjianjie.png`).default}
-        alt="logo"
-        className={logoImage}
-      ></img>
+      <div className={logoImage}>
+        <StaticImage
+          src={`../images/logo/logo-shirenjianjie.png`}
+          alt="logo"
+        ></StaticImage>
+      </div>
       <Layout>
         <Seo title="詩人簡介" />
         <Container>
@@ -185,6 +188,7 @@ export default function PoetTemplate({ pageContext: { char } }) {
               )}
             </div>
           </div>
+          <BackToTopButton></BackToTopButton>
         </Container>
       </Layout>
     </div>

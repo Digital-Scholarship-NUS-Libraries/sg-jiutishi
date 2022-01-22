@@ -4,7 +4,7 @@
       "slider": "slider-binlang.jpeg",
       "Tag": "南洋水果",
       "Title": "檳榔",
-      "Content": "2019"
+      "Content": null
     },
     {
       "id": 2,
@@ -95,7 +95,7 @@
       "slider": "slider-mingshengguji-1.jpg",
       "Tag": "濱海灣",
       "Title": "魚尾獅",
-      "Content": "1965-2019"
+      "Content": null
     },
     {
       "id": 15,
@@ -228,6 +228,6 @@
       "slider": "slider-yusheng.jpeg",
       "Tag": "南洋文化傳統",
       "Title": "撈魚生",
-      "Content": "2019"
+      "Content": null
     }
    ]

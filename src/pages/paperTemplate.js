@@ -3,15 +3,18 @@ import { poemAuthorTitle, paperMain, logoImage } from "../../style.module.css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Container } from "react-bootstrap"
+import { BackToTopButton } from "../components/Content/BackToTopButton.js"
+import { StaticImage } from "gatsby-plugin-image"
 
 export default function Paper({ pageContext: { paper } }) {
   return (
     <div>
-      <img
-        src={require(`../images/logo/logo-yanjiulunwen.png`).default}
-        alt="logo"
-        className={logoImage}
-      ></img>
+      <div className={logoImage}>
+        <StaticImage
+          src={`../images/logo/logo-yanjiulunwen.png`}
+          alt="logo"
+        ></StaticImage>
+      </div>
       <Layout>
         <Seo title={paper.title} />
         <Container>
@@ -42,6 +45,7 @@ export default function Paper({ pageContext: { paper } }) {
               </button>
             </a>
           </div>
+          <BackToTopButton></BackToTopButton>
         </Container>
       </Layout>
     </div>

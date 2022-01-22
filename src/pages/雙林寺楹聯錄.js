@@ -9,15 +9,18 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Container, Table } from "react-bootstrap"
 import data from "../components/Content/雙林寺楹聯錄Data"
+import { BackToTopButton } from "../components/Content/BackToTopButton.js"
+import { StaticImage } from "gatsby-plugin-image"
 
 const 雙林寺楹聯錄 = () => {
   return (
     <div>
-      <img
-        src={require(`../images/logo/logo-shuanglinsiyinglianlu.png`).default}
-        alt="logo"
-        className={logoImage}
-      ></img>
+      <div className={logoImage}>
+        <StaticImage
+          src={`../images/logo/logo-shuanglinsiyinglianlu.png`}
+          alt="logo"
+        ></StaticImage>
+      </div>
       <Layout>
         <Seo title="雙林寺楹聯錄" />
         <Container>
@@ -76,6 +79,7 @@ const 雙林寺楹聯錄 = () => {
               </button>
             </a>
           </div>
+          <BackToTopButton></BackToTopButton>
         </Container>
       </Layout>
     </div>

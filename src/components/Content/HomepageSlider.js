@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 const HomepageSlider = () => {
   return (
     <Carousel>
-      <Carousel.Item>
+      {/* <Carousel.Item>
         <Image
           className="d-block w-100"
           style={{ width: "1920px", height: "700px", objectFit: "cover" }}
@@ -42,7 +42,7 @@ const HomepageSlider = () => {
             <p style={{ color: "white" }}>贊助</p>
           </div>
         </Carousel.Caption>
-      </Carousel.Item>
+      </Carousel.Item> */}
       <Carousel.Item>
         <Image
           className="d-block w-100"

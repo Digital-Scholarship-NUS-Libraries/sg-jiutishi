@@ -309,6 +309,19 @@ export default function Footer(props) {
                       objectFit="contain"
                     />
                   </a>
+                  <a href="https://singaporeccc.org.sg/">
+                    <StaticImage
+                      src={"../../images/SCCC_logo.png"}
+                      alt="SCCC LOGO"
+                      style={{
+                        width: "250px",
+                        height: "100px",
+                      }}
+                      layout="fixed"
+                      position="0 0"
+                      objectFit="contain"
+                    />
+                  </a>
                 </Row>
 
                 <Row className={styles.footerMinContent}>

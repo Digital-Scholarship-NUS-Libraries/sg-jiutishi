@@ -8,6 +8,7 @@ import Seo from "../components/seo"
 import { Container, Carousel, Image } from "react-bootstrap"
 import authors from "../data/Poet.json"
 import AuthorDetails from "../components/Content/新洲雅苑懷舊集AuthorDetails"
+import { BackToTopButton } from "../components/Content/BackToTopButton.js"
 
 export default function topicTemplate({ pageContext: { topic } }) {
   function getYear(aut) {
@@ -224,6 +225,8 @@ export default function topicTemplate({ pageContext: { topic } }) {
               )}
             </div>
           </div>
+          <BackToTopButton></BackToTopButton>
+
         </Container>
       </Layout>
     </div>

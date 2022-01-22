@@ -43,6 +43,7 @@ button {
   border-radius: 3px;
   transform: translateY(-60px);
   box-shadow: 0px 10px 40px rgb(0 0 0 / 20%);
+  
 }
 
 .alphabetList {
@@ -101,10 +102,6 @@ button {
     max-width: 1200px !important;
   }
 
-  .aboutUsLeft {
-    /* margin-left: 2vw; */
-  }
-
   .aboutUsRight {
     /* margin-right: auto; */
     min-width: 350px;
@@ -147,7 +144,8 @@ button {
     margin-right: auto;
     display: flex;
     height: 160px;
-    align-self: center;
+    justify-content: center;
+    align-self:center;
   }
 
   .topicMain {
@@ -176,17 +174,6 @@ button {
     text-align: left;
     max-width: 800px !important;
   }
-
-  .indexRight {
-    /* margin-left: 10px !important; */
-    /* margin-right: 10px !important; */
-  }
-
-  .indexLeft {
-    /* margin-left: 10px !important; */
-    /* margin-right: 10px !important; */
-  }
-
   .indexVideoPlayer {
     max-width: 600px !important;
     width: 100% !important;
@@ -283,12 +270,6 @@ button {
     text-align: left;
     max-width: 800px !important;
   }
-
-  .indexRight {
-    /* margin-left: 10px !important; */
-    /* margin-right: 10px !important; */
-  }
-
   .indexLeft {
     /* margin-left: 10px !important; */
     margin-right: 10px !important;
@@ -297,4 +278,28 @@ button {
   .indexVideoPlayer {
     width: 350px;
   }
+}
+
+
+.backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  background-color: #05054b;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  opacity: 0.3;
+  transition: all .3s;
+
+}
+
+.backToTop:hover {
+  transition: all .3s;
+  opacity: 1
 }

@@ -10,6 +10,8 @@ import { Container } from "react-bootstrap"
 import data from "../../data/Video.json"
 import ReactPlayer from "react-player"
 import authors from "../../data/Poet.json"
+import { BackToTopButton } from "../../components/Content/BackToTopButton.js"
+import { StaticImage } from "gatsby-plugin-image"
 
 const 詩人吟唱 = () => {
   function getYear(aut) {
@@ -81,11 +83,12 @@ const 詩人吟唱 = () => {
 
   return (
     <div>
-      <img
-        src={require(`../../images/logo/logo-shirenyinchang.png`).default}
-        alt="logo"
-        className={logoImage}
-      ></img>
+      <div className={logoImage}>
+        <StaticImage
+          src={`../../images/logo/logo-shirenyinchang.png`}
+          alt="logo"
+        ></StaticImage>
+      </div>
       <Layout>
         <Seo title="詩人吟唱" />
         <Container>
@@ -118,6 +121,7 @@ const 詩人吟唱 = () => {
               ))}
             <br />
           </div>
+          <BackToTopButton></BackToTopButton>
         </Container>
       </Layout>
     </div>

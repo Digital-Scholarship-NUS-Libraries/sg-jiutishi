@@ -15,15 +15,15 @@ import {
 import HomepageAuthor from "../components/Content/HomepageAuthor"
 import HomepageArticle from "../components/Content/HomepageArticle"
 import ExternalLink from "../components/Content/ExternalLink"
+import { BackToTopButton } from "../components/Content/BackToTopButton.js"
+import { StaticImage } from "gatsby-plugin-image"
 
 const IndexPage = () => {
   return (
     <div>
-      <img
-        src={require(`../images/logo/logo.png`).default}
-        alt="logo"
-        className={logoImage}
-      ></img>
+      <div className={logoImage}>
+        <StaticImage src={`../images/logo/logo.png`} alt="logo"></StaticImage>
+      </div>
 
       <Layout>
         <Seo title="主頁" />
@@ -41,6 +41,7 @@ const IndexPage = () => {
               </div>
             </div>
           </div>
+          <BackToTopButton></BackToTopButton>
         </Container>
 
         <Content />

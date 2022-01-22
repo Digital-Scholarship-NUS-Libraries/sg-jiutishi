@@ -1,16 +1,5 @@
 [
- {
-   "id": 0,
-   "title": "",
-   "year": null,
-   "author_name": "",
-   "category": null,
-   "introduction": "結韻平仄不頂上聯，今律謂之失粘。然唐人諸名大家往往不拘，例如賈至早朝大明宮原倡，及王維和作，兩首結韻均不頂上聯平仄者也。余亦偶一效顰，自覺頗脫俗套。菽園自注於五明六通之齋。",
-   "content": "",
-   "published_info": null,
-   "poet_id": 0,
-   "comments": "假期至實裏達島郊遊，由三巴旺乘渡輪過海。三巴旺岸邊有一小古廟，名小蓬萊。年久失修，窗破簷壞，廟中神像，亦被風雨所侵；惟對岸靑山，依然翠色如黛。\n\n按：長沙，馬來語（pasar panjang）指長的沙灘，與西海岸之Pasir Panjang無關。西海岸之Pasir Panjang乃屬地名。"
- },
+ 
  {
    "id": 1,
    "title": "雙林禪院訪福慧和尚留題而去",
@@ -100,7 +89,7 @@
    "title": "苦熱",
    "year": "1964",
    "author_name": "黃火若",
-   "category": "南洋风俗",
+   "category": "南洋風俗",
    "introduction": null,
    "content": "大地如焚天似醉，逢人盡道熱難看。\n何當乞取連延雨，好逐炎魔入碧潭。",
    "published_info": "黃火若《今是堂剩稿》",
@@ -503,18 +492,7 @@
    "poet_id": 5,
    "comments": null
  },
- {
-   "id": 43,
-   "title": "金縷曲·題南風詞集示諸生",
-   "year": null,
-   "author_name": "劉太希",
-   "category": null,
-   "introduction": null,
-   "content": "天地秋如許。\n共鱣堂、神洲苗裔，芳洲蘭杜。\n薜荔夫容俱采擷，鐘呂宮商俱賦。\n看聯袂南風搜句。\n笑指鯤洋千尺浪，定垂天鵬翼摶雲去。\n應回顧，南園樹。\n\n流華暗向孤襟吐。\n重叮嚀俊才難得，駒光難駐。\n我爲江山佳麗想，珍重英年詞侶。\n儘拋卻勞生愁苦。\n夢與秋花相對冷，瘴煙霾黯斷中原土。\n歸去也，歸何處？",
-   "published_info": "劉太希《竹林精舍詩（附詞錄）》",
-   "poet_id": 5,
-   "comments": null
- },
+ 
  {
    "id": 44,
    "title": "星洲文士曾有龍山集雅之舉，惜余緣慳，未曾得附驥尾，旅居賦此以自怡",
@@ -947,18 +925,7 @@
    "poet_id": 10,
    "comments": null
  },
- {
-   "id": 81,
-   "title": "丹戎巴葛蔡寰清山人索句",
-   "year": null,
-   "author_name": "張明慈",
-   "category": null,
-   "introduction": null,
-   "content": "文華讀後詠微風，想見騷人大雅同，\n山水清音歌白雪，共吟妙句調玲瓏！",
-   "published_info": "張明慈《南遊吟草》",
-   "poet_id": 10,
-   "comments": null
- },
+ 
  {
    "id": 82,
    "title": "加東海濱雅集示賴欣仁家印禪",
@@ -2411,18 +2378,7 @@
    "poet_id": 22,
    "comments": null
  },
- {
-   "id": 205,
-   "title": "星洲寄勝社諸子",
-   "year": null,
-   "author_name": "潘潔夫",
-   "category": null,
-   "introduction": null,
-   "content": "千載竹林繼後塵，提壺挈榼醉吟身，\n滄浪斯濯忘清濁，世我相遺泯假真，\n一曲陽春驚客旅，浹旬杯酒款征人，\n相逢私幸曾相識，取得新詩療素貧。",
-   "published_info": "潘潔夫《餐英樓詩稿》",
-   "poet_id": 22,
-   "comments": null
- },
+ 
  {
    "id": 206,
    "title": "蕭山啖榴槤",
@@ -2495,18 +2451,8 @@
    "poet_id": 22,
    "comments": null
  },
- {
-   "id": 212,
-   "title": "贈李顯龍准將",
-   "year": null,
-   "author_name": "馬宗薌",
-   "category": null,
-   "introduction": null,
-   "content": "本性聰明喜讀書，前途遠大早知渠。\n中英并最人難及，品學兼優孰勝諸。\n注意民防嚴武備，留心國計重儲胥。\n從來吏治關心替，弊政查明應速除。",
-   "published_info": "馬宗薌《吟香選集》",
-   "poet_id": 23,
-   "comments": null
- },
+ 
+ 
  {
    "id": 213,
    "title": "松林俱樂部乙丑端陽雅集呈中國廣州詩社諸同道",
@@ -3241,7 +3187,7 @@
  },
  {
    "id": 275,
-   "title": "春日遊星洲雙林寺 ",
+   "title": "春日遊星洲雙林寺",
    "year": "1930",
    "author_name": "半憶",
    "category": "雙林寺詩詞",
@@ -3289,7 +3235,7 @@
  },
  {
    "id": 279,
-   "title": "夜飯雙林寺松輝上人淨室因乞留題賦贈二首 ",
+   "title": "夜飯雙林寺松輝上人淨室因乞留題賦贈二首",
    "year": "1949",
    "author_name": "胡超球",
    "category": "雙林寺詩詞",
@@ -3385,7 +3331,7 @@
  },
  {
    "id": 287,
-   "title": "秋日與余少銘、陳愚仙、陳梅閣諸君同遊雙林寺，梅老以詩紀之，有感予懷，爰步原韻奉和 ",
+   "title": "秋日與余少銘、陳愚仙、陳梅閣諸君同遊雙林寺，梅老以詩紀之，有感予懷，爰步原韻奉和",
    "year": "1924",
    "author_name": "蔡夢香",
    "category": "雙林寺詩詞",
@@ -3409,7 +3355,7 @@
  },
  {
    "id": 289,
-   "title": "與同學蔡寶蘧遊雙林寺 ",
+   "title": "與同學蔡寶蘧遊雙林寺",
    "year": "1927",
    "author_name": "了了",
    "category": "雙林寺詩詞",
@@ -3457,7 +3403,7 @@
  },
  {
    "id": 293,
-   "title": "蓮山雙林禪寺大雄寶殿、天王殿重修圓竣 \n暨龍光寶塔落成立石銘 ",
+   "title": "蓮山雙林禪寺大雄寶殿、天王殿重修圓竣 \n暨龍光寶塔落成立石銘",
    "year": null,
    "author_name": "許夢豐",
    "category": "雙林寺詩詞",

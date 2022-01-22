@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import {
   poemDiv,
   poemAuthorTitle,
@@ -10,12 +10,17 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Container } from "react-bootstrap"
 import topics from "../data/Topic.json"
+import logoDefault from "../images/logo/logo.png"
+import { BackToTopButton } from "../components/Content/BackToTopButton.js"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 export default function Poem({ pageContext: { poem } }) {
   function getLogoImage() {
     const poemTopic = poem.category
     const filtered = topics.filter(topic => topic.chn_name === poemTopic)
-    return filtered[0].logo_url
+    // return filtered[0].logo_url
+    return filtered ? filtered[0].logo_url : logoDefault
   }
 
   const logo = getLogoImage()
@@ -59,6 +64,7 @@ export default function Poem({ pageContext: { poem } }) {
               </button>
             </a>
           </div>
+          <BackToTopButton></BackToTopButton>
         </Container>
       </Layout>
     </div>

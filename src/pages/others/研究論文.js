@@ -3,9 +3,11 @@ import data from "../../data/Paper.json"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import { Container } from "react-bootstrap"
+import { BackToTopButton } from "../../components/Content/BackToTopButton.js"
 
 import { topicMain, logoImage } from "../../../style.module.css"
-
+import { faDivide } from "@fortawesome/free-solid-svg-icons"
+import { StaticImage } from "gatsby-plugin-image"
 const 研究論文 = () => {
   function sortByProperty(property) {
     return function (a, b) {
@@ -35,11 +37,12 @@ const 研究論文 = () => {
 
   return (
     <div>
-      <img
-        src={require(`../../images/logo/logo-yanjiulunwen.png`).default}
-        alt="logo"
-        className={logoImage}
-      ></img>
+      <div className={logoImage}>
+        <StaticImage
+          src={`../../images/logo/logo-yanjiulunwen.png`}
+          alt="logo"
+        ></StaticImage>
+      </div>
 
       <Layout>
         <Seo title="研究論文" />
@@ -69,6 +72,7 @@ const 研究論文 = () => {
               ))}
             </div>
           </div>
+          <BackToTopButton></BackToTopButton>
         </Container>
       </Layout>
     </div>

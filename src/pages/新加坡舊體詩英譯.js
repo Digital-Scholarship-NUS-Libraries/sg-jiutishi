@@ -3,15 +3,19 @@ import { topicMain, logoImage } from "../../style.module.css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Container } from "react-bootstrap"
+import { BackToTopButton } from "../components/Content/BackToTopButton.js"
+import { StaticImage } from "gatsby-plugin-image"
 
 const 新加坡舊體詩英譯 = () => {
   return (
     <div>
-      <img
-        src={require(`../images/logo/logo-sgjiutishiyingze.png`).default}
-        alt="logo"
-        className={logoImage}
-      ></img>
+      <div className={logoImage}>
+        <StaticImage
+          src={`../images/logo/logo-sgjiutishiyingze.png`}
+          alt="logo"
+          className={logoImage}
+        ></StaticImage>
+      </div>
       <Layout>
         <Seo title="新加坡舊體詩英譯" />
 
@@ -42,6 +46,7 @@ const 新加坡舊體詩英譯 = () => {
               </a>
             </div>
           </div>
+          <BackToTopButton></BackToTopButton>
         </Container>
       </Layout>
     </div>

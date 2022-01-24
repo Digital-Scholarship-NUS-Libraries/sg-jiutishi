@@ -16,10 +16,7 @@ import { StaticImage } from "gatsby-plugin-image"
 const 雙林寺楹聯錄 = () => {
   return (
     <div>
-      <div
-        // style={{ display: "flex", justifyContent: "center", height: "160px" }}
-        className={logoImageWrapper}
-      >
+      <div className={logoImageWrapper}>
         <StaticImage
           src={`../images/logo/logo-shuanglinsiyinglianlu.png`}
           alt="logo"

@@ -43,9 +43,13 @@ export default function topicTemplate({ pageContext: { topic } }) {
     }
   }
   function getSlideImage() {
-    const getTopic = topicData.filter(data => data.chn_name === topic.chn_name)
-    const slideImageArray = getTopic[0].slider
-    return slideImageArray
+    if (topic !== undefined) {
+      const getTopic = topicData.filter(
+        data => data.chn_name === topic.chn_name
+      )
+      const slideImageArray = getTopic[0].slider
+      return slideImageArray
+    }
   }
 
   function getSlideImageData(photo) {
@@ -58,23 +62,25 @@ export default function topicTemplate({ pageContext: { topic } }) {
   }
 
   function getSortedNYFT() {
-    const filtered = data.filter(data => data.category === topic.chn_name)
-    const filteredSort = filtered.sort((x, y) =>
-      x.author_name.localeCompare(y.author_name, "zh-CN")
-    )
-    var dict = {}
-    for (let i = 0; i < filteredSort.length; i++) {
-      const poem = filteredSort[i]
-      if (!poem.author_name) {
-        continue
+    if (topic !== undefined) {
+      const filtered = data.filter(data => data.category === topic.chn_name)
+      const filteredSort = filtered.sort((x, y) =>
+        x.author_name.localeCompare(y.author_name, "zh-CN")
+      )
+      var dict = {}
+      for (let i = 0; i < filteredSort.length; i++) {
+        const poem = filteredSort[i]
+        if (!poem.author_name) {
+          continue
+        }
+        if (!dict[poem.author_name]) {
+          dict[poem.author_name] = new Array(poem)
+        } else if (dict[poem.author_name]) {
+          dict[poem.author_name].push(poem)
+        }
       }
-      if (!dict[poem.author_name]) {
-        dict[poem.author_name] = new Array(poem)
-      } else if (dict[poem.author_name]) {
-        dict[poem.author_name].push(poem)
-      }
+      return dict
     }
-    return dict
   }
   const sortedData = getSortedNYFT()
   const slideImage = getSlideImage()

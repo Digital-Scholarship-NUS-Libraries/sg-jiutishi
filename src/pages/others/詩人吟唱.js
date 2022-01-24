@@ -81,10 +81,7 @@ const 詩人吟唱 = () => {
 
   return (
     <div>
-      <div
-        // style={{ display: "flex", justifyContent: "center", height: "160px" }}
-        className={logoImageWrapper}
-      >
+      <div className={logoImageWrapper}>
         <StaticImage
           src={`../../images/logo/logo-shirenyinchang.png`}
           alt="logo"

@@ -7,7 +7,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
   allPoem.forEach(poem => {
     createPage({
       path: `/poem/${poem.author_name}/${poem.title}/`,
-      component: require.resolve("./src/pages/poemTemplate.js"),
+      component: require.resolve("./src/templates/poemTemplate.js"),
       context: { poem },
     })
   })
@@ -16,18 +16,20 @@ exports.createPages = async ({ actions: { createPage } }) => {
   allPaper.forEach(paper => {
     createPage({
       path: `/paper/${paper.author}/${paper.title}`,
-      component: require.resolve("./src/pages/paperTemplate.js"),
+      component: require.resolve("./src/templates/paperTemplate.js"),
       context: { paper },
     })
   })
 
   const allTopic = Topic
   allTopic.forEach(topic => {
-    createPage({
-      path: `/${topic.chn_name}`,
-      component: require.resolve("./src/pages/topicTemplate.js"),
-      context: { topic },
-    })
+    if (topic !== undefined) {
+      createPage({
+        path: `/${topic.chn_name}`,
+        component: require.resolve("./src/templates/topicTemplate.js"),
+        context: { topic },
+      })
+    }
   })
 
   const allChars = [
@@ -62,7 +64,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
   allChars.forEach(char => {
     createPage({
       path: `/poet/${char}`,
-      component: require.resolve("./src/pages/poetTemplate.js"),
+      component: require.resolve("./src/templates/poetTemplate.js"),
       context: { char },
     })
   })

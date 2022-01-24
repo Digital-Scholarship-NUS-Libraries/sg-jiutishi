@@ -57,16 +57,11 @@ export default function topicTemplate({ pageContext: { topic } }) {
     return dataDict
   }
 
-  function sortByProperty(property) {
-    return function (a, b) {
-      if (a[property] > b[property]) return 1
-      else if (a[property] < b[property]) return -1
-      return 0
-    }
-  }
   function getSortedNYFT() {
     const filtered = data.filter(data => data.category === topic.chn_name)
-    const filteredSort = filtered.sort(sortByProperty("author_name"))
+    const filteredSort = filtered.sort((x, y) =>
+      x.author_name.localeCompare(y.author_name, "zh-CN")
+    )
     var dict = {}
     for (let i = 0; i < filteredSort.length; i++) {
       const poem = filteredSort[i]
@@ -85,6 +80,22 @@ export default function topicTemplate({ pageContext: { topic } }) {
   const slideImage = getSlideImage()
   const final = Object.entries(sortedData)
 
+  function checkZhuanti() {
+    const zhuantiList = [
+      "雙林寺詩詞",
+      "新洲雅苑懷舊集",
+      "新加坡大專文學獎--漢詩組得獎作品",
+      "國立大學學生作品",
+      "南洋大學作品",
+      "春聯比賽得獎作品",
+      "新加坡楹聯",
+      "新加坡舊體詩英譯",
+      "雙林寺楹聯錄",
+      "郁達夫作品選",
+    ]
+    return zhuantiList.includes(topic.chn_name) ? true : false
+  }
+
   return (
     <div>
       <img
@@ -96,7 +107,7 @@ export default function topicTemplate({ pageContext: { topic } }) {
       <Layout>
         <Seo title={topic.chn_name} />
 
-        {slideImage ? (
+        {slideImage && !checkZhuanti() ? (
           <Carousel>
             {slideImage.map((image, i) => (
               <Carousel.Item key={i}>
@@ -154,6 +165,20 @@ export default function topicTemplate({ pageContext: { topic } }) {
               </Carousel.Item>
             ))}
           </Carousel>
+        ) : (
+          ""
+        )}
+
+        {slideImage && checkZhuanti() ? (
+          <Image
+            className="d-block w-100"
+            style={{
+              width: "1920px",
+              objectFit: "contain",
+            }}
+            src={require(`../images/slider/${slideImage[0]}`).default}
+            alt="First slide"
+          />
         ) : (
           ""
         )}
@@ -226,7 +251,6 @@ export default function topicTemplate({ pageContext: { topic } }) {
             </div>
           </div>
           <BackToTopButton></BackToTopButton>
-
         </Container>
       </Layout>
     </div>

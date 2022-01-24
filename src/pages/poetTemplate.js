@@ -3,7 +3,12 @@ import { Container } from "react-bootstrap"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import "bootstrap/dist/css/bootstrap.min.css"
-import { alphabetList, logoImage, topicMain } from "../../style.module.css"
+import {
+  alphabetList,
+  logoImage,
+  topicMain,
+  logoImageWrapper,
+} from "../../style.module.css"
 import Poet from "../data/Poet.json"
 import { BackToTopButton } from "../components/Content/BackToTopButton.js"
 import { StaticImage } from "gatsby-plugin-image"
@@ -14,13 +19,16 @@ export default function PoetTemplate({ pageContext: { char } }) {
   function getPoets() {
     if (char === "全部") {
       const filtered = Poet.filter(poet => char !== poet.pinyin)
-      const filteredSorted = filtered.sort(sortByProperty("pinyin"))
-      // setReadingMore(filteredSorted.map(x => false))
-      return filteredSorted
+      const filteredSortedPinyin = filtered.sort((x, y) =>
+        x.fullName.localeCompare(y.fullName, "zh-CN")
+      )
+      return filteredSortedPinyin
     } else {
       const filtered = Poet.filter(poet => char === poet.pinyin.toUpperCase())
-      // setReadingMore(filtered.map(x => false))
-      return filtered
+      const filteredSortedPinyin = filtered.sort((x, y) =>
+        x.fullName.localeCompare(y.fullName, "zh-CN")
+      )
+      return filteredSortedPinyin
     }
   }
 
@@ -32,14 +40,6 @@ export default function PoetTemplate({ pageContext: { char } }) {
     setPoets(getPoets())
     //eslint-disable-next-line
   }, [])
-
-  function sortByProperty(property) {
-    return function (a, b) {
-      if (a[property] > b[property]) return 1
-      else if (a[property] < b[property]) return -1
-      return 0
-    }
-  }
 
   const alphabets = [
     "全部",
@@ -79,10 +79,14 @@ export default function PoetTemplate({ pageContext: { char } }) {
 
   return (
     <div>
-      <div className={logoImage}>
+      <div
+        // style={{ display: "flex", justifyContent: "center", height: "160px" }}
+        className={logoImageWrapper}
+      >
         <StaticImage
           src={`../images/logo/logo-shirenjianjie.png`}
           alt="logo"
+          imgClassName={logoImage}
         ></StaticImage>
       </div>
       <Layout>

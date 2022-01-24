@@ -193,6 +193,7 @@ const BambooBranchVersesOfSingapore = () => {
       <StaticImage
         src={`../../images/logo/logo-sgjiutishiyingze.png`}
         alt="logo"
+        imgClassName={logoImage}
       ></StaticImage>
       </div>
       <Layout>

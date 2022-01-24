@@ -39,6 +39,7 @@ export default function NavBar({ menuItems }) {
     { title: "新加坡楹聯", url: "新加坡楹聯" },
     { title: "新加坡舊體詩英譯", url: "新加坡舊體詩英譯" },
     { title: "雙林寺楹聯錄", url: "雙林寺楹聯錄" },
+    { title: "郁達夫作品選", url: "郁達夫作品選" },
   ]
 
   const societies = [

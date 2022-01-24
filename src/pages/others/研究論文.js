@@ -5,19 +5,18 @@ import Seo from "../../components/seo"
 import { Container } from "react-bootstrap"
 import { BackToTopButton } from "../../components/Content/BackToTopButton.js"
 
-import { topicMain, logoImage } from "../../../style.module.css"
-import { faDivide } from "@fortawesome/free-solid-svg-icons"
+import {
+  topicMain,
+  logoImage,
+  logoImageWrapper,
+} from "../../../style.module.css"
 import { StaticImage } from "gatsby-plugin-image"
 const 研究論文 = () => {
-  function sortByProperty(property) {
-    return function (a, b) {
-      if (a[property] > b[property]) return 1
-      else if (a[property] < b[property]) return -1
-      return 0
-    }
-  }
   function getSortedNYFT() {
-    const filteredSort = data.sort(sortByProperty("author"))
+    // const filteredSort = data.sort(sortByProperty("author"))
+    const filteredSort = data.sort((x, y) =>
+      x.author.localeCompare(y.author, "zh-CN")
+    )
     var dict = {}
     for (let i = 0; i < filteredSort.length; i++) {
       const poem = filteredSort[i]
@@ -37,10 +36,11 @@ const 研究論文 = () => {
 
   return (
     <div>
-      <div className={logoImage}>
+      <div className={logoImageWrapper}>
         <StaticImage
           src={`../../images/logo/logo-yanjiulunwen.png`}
           alt="logo"
+          imgClassName={logoImage}
         ></StaticImage>
       </div>
 

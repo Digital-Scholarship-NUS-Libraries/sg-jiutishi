@@ -4,6 +4,7 @@ import {
   poemAuthorTitle,
   poemMain,
   logoImage,
+  logoImageWrapper,
 } from "../../style.module.css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -15,10 +16,14 @@ import { StaticImage } from "gatsby-plugin-image"
 const 雙林寺楹聯錄 = () => {
   return (
     <div>
-      <div className={logoImage}>
+      <div
+        // style={{ display: "flex", justifyContent: "center", height: "160px" }}
+        className={logoImageWrapper}
+      >
         <StaticImage
           src={`../images/logo/logo-shuanglinsiyinglianlu.png`}
           alt="logo"
+          imgClassName={logoImage}
         ></StaticImage>
       </div>
       <Layout>

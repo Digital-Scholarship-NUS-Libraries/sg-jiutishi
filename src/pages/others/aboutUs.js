@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Container } from "react-bootstrap"
-import Content from "../../components/Content/Content.js"
 import { AiOutlineYoutube } from "@react-icons/all-files/ai/AiOutlineYoutube"
 import { BackToTopButton } from "../../components/Content/BackToTopButton.js"
 import { StaticImage } from "gatsby-plugin-image"

@@ -1,5 +1,10 @@
 import React from "react"
-import { poemAuthorTitle, paperMain, logoImage } from "../../style.module.css"
+import {
+  poemAuthorTitle,
+  paperMain,
+  logoImage,
+  logoImageWrapper,
+} from "../../style.module.css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Container } from "react-bootstrap"
@@ -9,10 +14,11 @@ import { StaticImage } from "gatsby-plugin-image"
 export default function Paper({ pageContext: { paper } }) {
   return (
     <div>
-      <div className={logoImage}>
+      <div className={logoImageWrapper}>
         <StaticImage
           src={`../images/logo/logo-yanjiulunwen.png`}
           alt="logo"
+          imgClassName={logoImage}
         ></StaticImage>
       </div>
       <Layout>

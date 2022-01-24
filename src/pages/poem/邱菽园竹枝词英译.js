@@ -260,6 +260,7 @@ const 邱菽园竹枝词英译 = () => {
         <StaticImage
           src={`../../images/logo/logo-sgjiutishiyingze.png`}
           alt="logo"
+          className={logoImage}
         ></StaticImage>
       </div>
       <Layout>

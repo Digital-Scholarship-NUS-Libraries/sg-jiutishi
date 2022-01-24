@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import {
   poemDiv,
   poemAuthorTitle,
@@ -10,17 +10,17 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Container } from "react-bootstrap"
 import topics from "../data/Topic.json"
-import logoDefault from "../images/logo/logo.png"
 import { BackToTopButton } from "../components/Content/BackToTopButton.js"
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
-import { StaticImage } from "gatsby-plugin-image"
+// import { getImage, GatsbyImage } from "gatsby-plugin-image"
+// import { StaticImage } from "gatsby-plugin-image"
 
 export default function Poem({ pageContext: { poem } }) {
   function getLogoImage() {
     const poemTopic = poem.category
     const filtered = topics.filter(topic => topic.chn_name === poemTopic)
-    // return filtered[0].logo_url
-    return filtered ? filtered[0].logo_url : logoDefault
+    return filtered && filtered[0] && filtered[0].logo_url
+      ? filtered[0].logo_url
+      : "logo.png"
   }
 
   const logo = getLogoImage()
@@ -46,7 +46,7 @@ export default function Poem({ pageContext: { poem } }) {
               <br />
               <p className={poemContent}>{poem.content}</p>
               <br />
-              <p className={poemAuthorTitle}>
+              <p className={poemAuthorTitle} style={{ whiteSpace: "pre-line" }}>
                 {poem.comments ? poem.comments : ""}
               </p>
               <br />

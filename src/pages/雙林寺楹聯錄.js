@@ -12,6 +12,7 @@ import { Container, Table } from "react-bootstrap"
 import data from "../components/Content/雙林寺楹聯錄Data"
 import { BackToTopButton } from "../components/Content/BackToTopButton.js"
 import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 const 雙林寺楹聯錄 = () => {
   return (
@@ -72,14 +73,14 @@ const 雙林寺楹聯錄 = () => {
                 </tbody>
               </Table>
             </div>
-            <a href={`/`} style={{ alignSelf: "center", marginBottom: "50px" }}>
+            <Link to="/" style={{ alignSelf: "center", marginBottom: "50px" }}>
               <button
                 className={"btn btn-outline-dark rounded-0"}
                 type="button"
               >
                 返回上頁
               </button>
-            </a>
+            </Link>
           </div>
           <BackToTopButton></BackToTopButton>
         </Container>

@@ -12,6 +12,7 @@ import {
 import Poet from "../data/Poet.json"
 import { BackToTopButton } from "../components/Content/BackToTopButton.js"
 import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 export default function PoetTemplate({ pageContext: { char } }) {
   const [poets, setPoets] = React.useState([])
@@ -103,15 +104,15 @@ export default function PoetTemplate({ pageContext: { char } }) {
               }}
             >
               {alphabets.map((alphabet, i) => (
-                <a
+                <Link
+                  to={`/poet/${alphabet}`}
                   key={i}
-                  href={`/poet/${alphabet}`}
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <div style={{ padding: "8px 15px" }} className={alphabetList}>
                     {alphabet}
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
             <div className={topicMain}>

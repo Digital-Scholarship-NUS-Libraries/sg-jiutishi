@@ -5,6 +5,7 @@ import Seo from "../components/seo"
 import { Container } from "react-bootstrap"
 import { BackToTopButton } from "../components/Content/BackToTopButton.js"
 import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 const 新加坡舊體詩英譯 = () => {
   return (
@@ -25,7 +26,7 @@ const 新加坡舊體詩英譯 = () => {
               <div style={{ margin: "30px" }}>
                 <h3 style={{ marginBottom: "20px" }}>新加坡舊體詩英譯</h3>
               </div>
-              <a href={`/poem/BambooBranchVersesOfSingapore`}>
+              <Link to="/poem/BambooBranchVersesOfSingapore">
                 <button
                   className={"btn btn-outline-dark rounded-0"}
                   type="button"
@@ -33,9 +34,9 @@ const 新加坡舊體詩英譯 = () => {
                 >
                   新加坡竹枝词英译 Bamboo Branch Verses of Singapore
                 </button>
-              </a>
+              </Link>
 
-              <a href={`/poem/邱菽园竹枝词英译`}>
+              <Link to={"/poem/邱菽园竹枝词英译"}>
                 <button
                   className={"btn btn-outline-dark rounded-0"}
                   type="button"
@@ -43,7 +44,7 @@ const 新加坡舊體詩英譯 = () => {
                 >
                   邱菽园竹枝词英译
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
           <BackToTopButton></BackToTopButton>

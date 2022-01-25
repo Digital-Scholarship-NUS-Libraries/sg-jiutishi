@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/nuslibraries/dsprojects/sg-jiutishi`,
   siteMetadata: {
     title: `新加坡舊體詩庫`,
     description: `A website to promote the culture of jiutishi as well as to enhance cultural exchange.`,

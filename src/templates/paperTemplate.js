@@ -10,6 +10,7 @@ import Seo from "../components/seo"
 import { Container } from "react-bootstrap"
 import { BackToTopButton } from "../components/Content/BackToTopButton.js"
 import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 export default function Paper({ pageContext: { paper } }) {
   return (
@@ -39,8 +40,8 @@ export default function Paper({ pageContext: { paper } }) {
             </div>
             <br />
             <br />
-            <a
-              href={`/others/研究論文`}
+            <Link
+              to={"/others/研究論文"}
               style={{ alignSelf: "center", marginBottom: "50px" }}
             >
               <button
@@ -49,7 +50,7 @@ export default function Paper({ pageContext: { paper } }) {
               >
                 返回上頁
               </button>
-            </a>
+            </Link>
           </div>
           <BackToTopButton></BackToTopButton>
         </Container>

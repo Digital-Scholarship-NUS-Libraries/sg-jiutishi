@@ -9,6 +9,7 @@ import { Container, Carousel, Image } from "react-bootstrap"
 import authors from "../data/Poet.json"
 import AuthorDetails from "../components/Content/新洲雅苑懷舊集AuthorDetails"
 import { BackToTopButton } from "../components/Content/BackToTopButton.js"
+import { Link } from "gatsby"
 
 export default function topicTemplate({ pageContext: { topic } }) {
   function getYear(aut) {
@@ -233,8 +234,8 @@ export default function topicTemplate({ pageContext: { topic } }) {
                     )}
 
                     {author[1].map((poem, i) => (
-                      <a
-                        href={`/poem/${poem.author_name}/${poem.title}`}
+                      <Link
+                        to={`/poem/${poem.author_name}/${poem.title}`}
                         key={i}
                       >
                         <button
@@ -247,7 +248,7 @@ export default function topicTemplate({ pageContext: { topic } }) {
                         >
                           {poem.title}
                         </button>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 ))

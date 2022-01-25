@@ -11,6 +11,7 @@ import Seo from "../components/seo"
 import { Container } from "react-bootstrap"
 import topics from "../data/Topic.json"
 import { BackToTopButton } from "../components/Content/BackToTopButton.js"
+import { Link } from "gatsby"
 // import { getImage, GatsbyImage } from "gatsby-plugin-image"
 // import { StaticImage } from "gatsby-plugin-image"
 
@@ -52,8 +53,8 @@ export default function Poem({ pageContext: { poem } }) {
               <br />
               <h6 className={poemAuthorTitle}>{poem.published_info}</h6>
             </div>
-            <a
-              href={`/${poem.category}`}
+            <Link
+              to={`/${poem.category}`}
               style={{ alignSelf: "center", marginBottom: "50px" }}
             >
               <button
@@ -62,7 +63,7 @@ export default function Poem({ pageContext: { poem } }) {
               >
                 返回上頁
               </button>
-            </a>
+            </Link>
           </div>
           <BackToTopButton></BackToTopButton>
         </Container>

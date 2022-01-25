@@ -1,5 +1,6 @@
 import { homepageAuthor, homepageAuthorImage } from "../../../style.module.css"
 import * as React from "react"
+import { Link } from "gatsby"
 
 const authors = [
   {
@@ -70,11 +71,11 @@ const HomepageAuthor = () => {
             ""
           )}
           <br />
-          <a href={`${author.collectionURL}`}>
+          <Link to={`${author.collectionURL}`}>
             <button className={"btn btn-outline-dark rounded-0"}>
               {author.collectionName}
             </button>
-          </a>
+          </Link>
         </div>
       ))}
     </div>

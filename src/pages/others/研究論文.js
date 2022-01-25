@@ -11,6 +11,7 @@ import {
   logoImageWrapper,
 } from "../../../style.module.css"
 import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 const 研究論文 = () => {
   function getSortedNYFT() {
     // const filteredSort = data.sort(sortByProperty("author"))
@@ -55,7 +56,7 @@ const 研究論文 = () => {
                   <h4 style={{ marginBottom: "20px" }}>{author[0]}</h4>
 
                   {author[1].map((poem, i) => (
-                    <a href={`/paper/${poem.author}/${poem.title}`} key={i}>
+                    <Link to={`/paper/${poem.author}/${poem.title}`} key={i}>
                       <button
                         className={"btn btn-outline-dark rounded-0"}
                         type="button"
@@ -66,7 +67,7 @@ const 研究論文 = () => {
                       >
                         {poem.title}
                       </button>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               ))}

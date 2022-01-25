@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import * as styles from "./Navbar.module.scss"
 import { Container, Nav, NavDropdown } from "react-bootstrap"
+import { Link, navigate } from "gatsby"
 
 function HoverControlledDropdown(props) {
   const [isHovered, setIsHovered] = useState(false)
@@ -55,43 +56,77 @@ export default function NavBar({ menuItems }) {
     <Container className={styles.navbar}>
       <Nav style={{ justifyContent: "center" }} className={"me-auto"}>
         <Nav.Item>
-          <Nav.Link className={styles.navItem} href="/">
-            首頁
+          <Nav.Link className={styles.navItem} onClick={() => navigate("/")}>
+            <Link style={{ textDecoration: "none" }} to="/">
+              首頁
+            </Link>
           </Nav.Link>
         </Nav.Item>
 
         <HoverControlledDropdown className={styles.navItem} title="專題">
           {zhuantis.map((zhuanti, i) => (
-            <NavDropdown.Item key={i} href={`/${zhuanti.url}`} target="_self">
-              {zhuanti.title}
+            <NavDropdown.Item
+              key={i}
+              target="_self"
+              onClick={() => navigate(`/${zhuanti.url}`)}
+            >
+              <Link style={{ textDecoration: "none" }} to={`/${zhuanti.url}`}>
+                {zhuanti.title}
+              </Link>
             </NavDropdown.Item>
           ))}
         </HoverControlledDropdown>
 
         {topics.map((topic, i) => (
           <Nav.Item key={i}>
-            <Nav.Link className={styles.navItem} href={`/${topic.url}`}>
-              {topic.title}
+            <Nav.Link
+              className={styles.navItem}
+              onClick={() => navigate(`/${topic.url}`)}
+            >
+              <Link style={{ textDecoration: "none" }} to={`/${topic.url}`}>
+                {topic.title}
+              </Link>
             </Nav.Link>
           </Nav.Item>
         ))}
 
         <HoverControlledDropdown className={styles.navItem} title="詩社">
           {societies.map((society, i) => (
-            <NavDropdown.Item key={i} href={`/${society.url}`} target="_self">
-              {society.title}
+            <NavDropdown.Item
+              key={i}
+              onClick={() => navigate(`/${society.url}`)}
+              target="_self"
+            >
+              <Link style={{ textDecoration: "none" }} to={`/${society.url}`}>
+                {society.title}
+              </Link>
             </NavDropdown.Item>
           ))}
         </HoverControlledDropdown>
         <HoverControlledDropdown className={styles.navItem} title="更多">
-          <NavDropdown.Item href={`/others/研究論文`} target="_self">
-            研究論文
+          <NavDropdown.Item
+            onClick={() => navigate(`/others/研究論文`)}
+            target="_self"
+          >
+            <Link style={{ textDecoration: "none" }} to={"/others/研究論文"}>
+              研究論文
+            </Link>
           </NavDropdown.Item>
-          <NavDropdown.Item href={`/others/詩人吟唱`} target="_self">
-            詩人吟唱
+          <NavDropdown.Item
+            target="_self"
+            onClick={() => navigate(`/others/詩人吟唱`)}
+          >
+            <Link style={{ textDecoration: "none" }} to={"/others/詩人吟唱"}>
+              詩人吟唱
+            </Link>
           </NavDropdown.Item>
-          <NavDropdown.Item href={`/others/aboutUs`} target="_self">
-            關於我們
+          <NavDropdown.Item
+            target="_self"
+            onClick={() => navigate(`/others/aboutUs`)}
+          >
+            <Link style={{ textDecoration: "none" }} to={"/others/aboutUs"}>
+              關於我們
+            </Link>
           </NavDropdown.Item>
         </HoverControlledDropdown>
       </Nav>

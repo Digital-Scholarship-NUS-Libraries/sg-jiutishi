@@ -10,6 +10,7 @@ import Seo from "../../components/seo"
 import { Container } from "react-bootstrap"
 import { BackToTopButton } from "../../components/Content/BackToTopButton.js"
 import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 const 邱菽园竹枝词英译 = () => {
   const translations = [
@@ -304,8 +305,8 @@ const 邱菽园竹枝词英译 = () => {
                 </div>
               ))}
             </div>
-            <a
-              href={`/新加坡舊體詩英譯`}
+            <Link
+              to={"/新加坡舊體詩英譯"}
               style={{ alignSelf: "center", marginBottom: "50px" }}
             >
               <button
@@ -314,7 +315,7 @@ const 邱菽园竹枝词英译 = () => {
               >
                 返回上頁
               </button>
-            </a>
+            </Link>
           </div>
           <BackToTopButton></BackToTopButton>
         </Container>

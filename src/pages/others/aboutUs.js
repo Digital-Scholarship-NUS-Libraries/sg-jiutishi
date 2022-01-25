@@ -19,6 +19,7 @@ import {
   aboutUsRight,
   indexVideoPlayer,
 } from "../../../style.module.css"
+import { Link } from "gatsby"
 
 const books = [
   {
@@ -154,11 +155,11 @@ const AboutUs = () => {
                   />
                   <br />
                   <br />
-                  <a href={`/others/aboutUs`}>
+                  <Link to={`/others/aboutUs`}>
                     <button className={"btn btn-outline-dark rounded-0"}>
                       Read More
                     </button>
-                  </a>
+                  </Link>
                 </div>
                 <div style={{ margin: "30px" }}>
                   <h3>出版著作</h3>
@@ -171,7 +172,13 @@ const AboutUs = () => {
                         margin: "30px 0px",
                       }}
                     >
-                      <div style={{ width: "80px", height: "20%" }}>
+                      <div
+                        style={{
+                          width: "80px",
+                          height: "20%",
+                          marginTop: "10px",
+                        }}
+                      >
                         <StaticImage
                           src={`../../images/aboutme-bookcover-1.jpg`}
                           alt={"bookcover"}
@@ -184,14 +191,11 @@ const AboutUs = () => {
                           marginLeft: "10px",
                         }}
                       >
-                        <a href={`/others/aboutUs`}>
-                          <button
-                            className={"btn btn-outline-dark rounded-0"}
-                            style={{ padding: "0px !important" }}
-                          >
+                        <Link to={"/others/aboutUs"}>
+                          <button className={"btn btn-outline-dark rounded-0"}>
                             {book.publisher}
                           </button>
-                        </a>
+                        </Link>
                         <span style={{ margin: "10px 0px" }}>{book.title}</span>
                         <i>{book.year}</i>
                       </div>

@@ -10,6 +10,7 @@ import Seo from "../../components/seo"
 import { Container } from "react-bootstrap"
 import { BackToTopButton } from "../../components/Content/BackToTopButton.js"
 import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 const BambooBranchVersesOfSingapore = () => {
   const translations = [
@@ -190,11 +191,11 @@ const BambooBranchVersesOfSingapore = () => {
   return (
     <div>
       <div className={logoImage}>
-      <StaticImage
-        src={`../../images/logo/logo-sgjiutishiyingze.png`}
-        alt="logo"
-        imgClassName={logoImage}
-      ></StaticImage>
+        <StaticImage
+          src={`../../images/logo/logo-sgjiutishiyingze.png`}
+          alt="logo"
+          imgClassName={logoImage}
+        ></StaticImage>
       </div>
       <Layout>
         <Seo title="新加坡竹枝词英译" />
@@ -228,8 +229,8 @@ const BambooBranchVersesOfSingapore = () => {
                 </div>
               ))}
             </div>
-            <a
-              href={`/新加坡舊體詩英譯`}
+            <Link
+              to={"/新加坡舊體詩英譯"}
               style={{ alignSelf: "center", marginBottom: "50px" }}
             >
               <button
@@ -238,10 +239,9 @@ const BambooBranchVersesOfSingapore = () => {
               >
                 返回上頁
               </button>
-            </a>
+            </Link>
           </div>
           <BackToTopButton></BackToTopButton>
-
         </Container>
       </Layout>
     </div>

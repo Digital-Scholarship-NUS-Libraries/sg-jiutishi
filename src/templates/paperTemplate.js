@@ -41,7 +41,7 @@ export default function Paper({ pageContext: { paper } }) {
             <br />
             <br />
             <Link
-              to={"/others/研究論文"}
+              to={"/others/yanjiulunwen"}
               style={{ alignSelf: "center", marginBottom: "50px" }}
             >
               <button

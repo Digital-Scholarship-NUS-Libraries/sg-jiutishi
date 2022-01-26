@@ -17,39 +17,39 @@ function HoverControlledDropdown(props) {
 
 export default function NavBar({ menuItems }) {
   const topics = [
-    { title: "名勝古跡", url: "名勝古跡" },
-    { title: "南洋風土", url: "南洋風土" },
-    { title: "星洲風月", url: "星洲風月" },
-    { title: "佛語禪心", url: "佛語禪心" },
-    { title: "淪陷時期", url: "淪陷時期" },
-    { title: "歷史事件", url: "歷史事件" },
-    { title: "文藝活動", url: "文藝活動" },
-    { title: "詩人簡介", url: "poet/全部" },
+    { title: "名勝古跡", url: "mingshengguji" },
+    { title: "南洋風土", url: "nanyangfengtu" },
+    { title: "星洲風月", url: "xingzhoufengyue" },
+    { title: "佛語禪心", url: "foyuchanxin" },
+    { title: "淪陷時期", url: "lunxianshiqi" },
+    { title: "歷史事件", url: "lishishijian" },
+    { title: "文藝活動", url: "wenyihuodong" },
+    { title: "詩人簡介", url: "poet/All" },
   ]
 
   const zhuantis = [
-    { title: "雙林寺詩詞", url: "雙林寺詩詞" },
-    { title: "新洲雅苑懷舊集", url: "新洲雅苑懷舊集" },
+    { title: "雙林寺詩詞", url: "zhuanti-shuanglin" },
+    { title: "新洲雅苑懷舊集", url: "zhuanti-xinzhouyayuan" },
     {
       title: "新加坡大專文學獎--漢詩組得獎作品",
-      url: "新加坡大專文學獎--漢詩組得獎作品",
+      url: "zhuanti-dazhuan",
     },
-    { title: "國立大學學生作品", url: "國立大學學生作品" },
-    { title: "南洋大學師生作品", url: "南洋大學作品" },
-    { title: "春聯比賽得獎作品", url: "春聯比賽得獎作品" },
-    { title: "新加坡楹聯", url: "新加坡楹聯" },
-    { title: "新加坡舊體詩英譯", url: "新加坡舊體詩英譯" },
-    { title: "雙林寺楹聯錄", url: "雙林寺楹聯錄" },
-    { title: "郁達夫作品選", url: "郁達夫作品選" },
+    { title: "國立大學學生作品", url: "zhuanti-nus" },
+    { title: "南洋大學師生作品", url: "zhuanti-nanyangdaxue" },
+    { title: "春聯比賽得獎作品", url: "zhuanti-chunlian" },
+    { title: "新加坡楹聯", url: "zhuanti-sgyinglian" },
+    { title: "新加坡舊體詩英譯", url: "XinJiaPoJiuTiShiYingYi" },
+    { title: "雙林寺楹聯錄", url: "ShuangLinSiYingLianLu" },
+    { title: "郁達夫作品選", url: "yudafu" },
   ]
 
   const societies = [
-    { title: "檀社", url: "檀社作品選" },
-    { title: "新聲詩社", url: "新聲詩社早期作品選" },
-    { title: "獅城吟社", url: "獅城吟社" },
-    { title: "南金詩社", url: "南金詩社" },
-    { title: "全球漢詩總會", url: "全球漢詩總會" },
-    { title: "其他", url: "詩社" },
+    { title: "檀社", url: "tanshe" },
+    { title: "新聲詩社", url: "xinshengshishe" },
+    { title: "獅城吟社", url: "shichengyinshe" },
+    { title: "南金詩社", url: "nanjinshishe" },
+    { title: "全球漢詩總會", url: "quanqiuhanshizonghui" },
+    { title: "其他", url: "shishe" },
   ]
 
   return (
@@ -105,18 +105,24 @@ export default function NavBar({ menuItems }) {
         </HoverControlledDropdown>
         <HoverControlledDropdown className={styles.navItem} title="更多">
           <NavDropdown.Item
-            onClick={() => navigate(`/others/研究論文`)}
+            onClick={() => navigate(`/others/yanjiulunwen`)}
             target="_self"
           >
-            <Link style={{ textDecoration: "none" }} to={"/others/研究論文"}>
+            <Link
+              style={{ textDecoration: "none" }}
+              to={"/others/yanjiulunwen"}
+            >
               研究論文
             </Link>
           </NavDropdown.Item>
           <NavDropdown.Item
             target="_self"
-            onClick={() => navigate(`/others/詩人吟唱`)}
+            onClick={() => navigate(`/others/shirenyinchang`)}
           >
-            <Link style={{ textDecoration: "none" }} to={"/others/詩人吟唱"}>
+            <Link
+              style={{ textDecoration: "none" }}
+              to={"/others/shirenyinchang"}
+            >
               詩人吟唱
             </Link>
           </NavDropdown.Item>

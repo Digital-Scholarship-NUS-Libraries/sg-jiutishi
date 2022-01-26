@@ -18,7 +18,7 @@ export default function PoetTemplate({ pageContext: { char } }) {
   const [poets, setPoets] = React.useState([])
 
   function getPoets() {
-    if (char === "全部") {
+    if (char === "All") {
       const filtered = Poet.filter(poet => char !== poet.pinyin)
       const filteredSortedPinyin = filtered.sort((x, y) =>
         x.fullName.localeCompare(y.fullName, "zh-CN")
@@ -105,7 +105,7 @@ export default function PoetTemplate({ pageContext: { char } }) {
             >
               {alphabets.map((alphabet, i) => (
                 <Link
-                  to={`/poet/${alphabet}`}
+                  to={alphabet === "全部" ? `/poet/All` : `/poet/${alphabet}`}
                   key={i}
                   style={{ textDecoration: "none", color: "black" }}
                 >

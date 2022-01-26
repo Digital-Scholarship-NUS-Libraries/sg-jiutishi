@@ -230,7 +230,7 @@ const BambooBranchVersesOfSingapore = () => {
               ))}
             </div>
             <Link
-              to={"/新加坡舊體詩英譯"}
+              to={"/XinJiaPoJiuTiShiYingYi"}
               style={{ alignSelf: "center", marginBottom: "50px" }}
             >
               <button

@@ -36,7 +36,7 @@ const 新加坡舊體詩英譯 = () => {
                 </button>
               </Link>
 
-              <Link to={"/poem/邱菽园竹枝词英译"}>
+              <Link to={"/poem/QiuShuYuanZhuZhiCiYingYi"}>
                 <button
                   className={"btn btn-outline-dark rounded-0"}
                   type="button"

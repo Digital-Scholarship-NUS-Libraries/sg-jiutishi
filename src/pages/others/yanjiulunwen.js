@@ -56,7 +56,7 @@ const 研究論文 = () => {
                   <h4 style={{ marginBottom: "20px" }}>{author[0]}</h4>
 
                   {author[1].map((poem, i) => (
-                    <Link to={`/paper/${poem.author}/${poem.title}`} key={i}>
+                    <Link to={`/paper/${poem.id}`} key={i}>
                       <button
                         className={"btn btn-outline-dark rounded-0"}
                         type="button"

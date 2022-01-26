@@ -6,7 +6,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
   const allPoem = Poem
   allPoem.forEach(poem => {
     createPage({
-      path: `/poem/${poem.author_name}/${poem.title}/`,
+      path: `/poem/${poem.id}`,
       component: require.resolve("./src/templates/poemTemplate.js"),
       context: { poem },
     })
@@ -15,7 +15,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
   const allPaper = Paper
   allPaper.forEach(paper => {
     createPage({
-      path: `/paper/${paper.author}/${paper.title}`,
+      path: `/paper/${paper.id}`,
       component: require.resolve("./src/templates/paperTemplate.js"),
       context: { paper },
     })
@@ -25,7 +25,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
   allTopic.forEach(topic => {
     if (topic !== undefined) {
       createPage({
-        path: `/${topic.chn_name}`,
+        path: `/${topic.name}`,
         component: require.resolve("./src/templates/topicTemplate.js"),
         context: { topic },
       })
@@ -33,7 +33,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
   })
 
   const allChars = [
-    "全部",
+    "All",
     "A",
     "B",
     "C",

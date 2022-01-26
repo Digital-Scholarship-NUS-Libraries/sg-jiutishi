@@ -234,10 +234,7 @@ export default function topicTemplate({ pageContext: { topic } }) {
                     )}
 
                     {author[1].map((poem, i) => (
-                      <Link
-                        to={`/poem/${poem.author_name}/${poem.title}`}
-                        key={i}
-                      >
+                      <Link to={`/poem/${poem.id}`} key={i}>
                         <button
                           className={"btn btn-outline-dark rounded-0"}
                           type="button"

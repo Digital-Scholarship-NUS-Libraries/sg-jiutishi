@@ -12,8 +12,6 @@ import { Container } from "react-bootstrap"
 import topics from "../data/Topic.json"
 import { BackToTopButton } from "../components/Content/BackToTopButton.js"
 import { Link } from "gatsby"
-// import { getImage, GatsbyImage } from "gatsby-plugin-image"
-// import { StaticImage } from "gatsby-plugin-image"
 
 export default function Poem({ pageContext: { poem } }) {
   function getLogoImage() {
@@ -24,7 +22,14 @@ export default function Poem({ pageContext: { poem } }) {
       : "logo.png"
   }
 
+  function getTopicEngName() {
+    const poemTopic = poem.category
+    const filtered = topics.filter(topic => topic.chn_name === poemTopic)
+    return filtered[0] && filtered[0].name ? filtered[0].name : ""
+  }
+
   const logo = getLogoImage()
+  const topicEngName = getTopicEngName()
 
   return (
     <div>
@@ -54,7 +59,7 @@ export default function Poem({ pageContext: { poem } }) {
               <h6 className={poemAuthorTitle}>{poem.published_info}</h6>
             </div>
             <Link
-              to={`/${poem.category}`}
+              to={`/${topicEngName}`}
               style={{ alignSelf: "center", marginBottom: "50px" }}
             >
               <button

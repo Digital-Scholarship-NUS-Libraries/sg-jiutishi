@@ -19,161 +19,6 @@ export default function Footer(props) {
       <Container>
         <Container className={styles.footerTop}>
           <Row>
-            <Col xs={4} sm={4} lg={4} className="d-none d-sm-none d-lg-block">
-              <h2>Resource Librarians</h2>
-              <ListGroup className={styles.footer_listItem}>
-                <li>
-                  {" "}
-                  <a
-                    href="http://libguides.nus.edu.sg/areastudies"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Area Studies
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="http://libguides.nus.edu.sg/business"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Business
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="http://libguides.nus.edu.sg/sde"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Design &amp; Environment
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="http://libguides.nus.edu.sg/sb.php?subject_id=32292"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Reference Management
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="http://libguides.nus.edu.sg/engineering"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Engineering &amp; Computer Science
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="http://libguides.nus.edu.sg/humanities"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Humanities
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="http://libguides.nus.edu.sg/sb.php?subject_id=32284"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Law
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="http://libguides.nus.edu.sg/sb.php?subject_id=32285"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Medicine, Pharmacy, &amp; Nursing
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="http://libguides.nus.edu.sg/sb.php?subject_id=32286"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Music
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="http://libguides.nus.edu.sg/sb.php?subject_id=32293"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Patents
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="https://libguides.nus.edu.sg/rdm"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Research Data Management
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="https://libguides.nus.edu.sg/researchimpact "
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Research Impact Measurement
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="http://libguides.nus.edu.sg/science"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Science
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="http://libguides.nus.edu.sg/socialscience"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Social Sciences
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="http://libguides.nus.edu.sg/yale-nus"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Yale-NUS College
-                  </a>
-                </li>
-              </ListGroup>
-            </Col>
 
             <Col xs={4} sm={4} lg={4} className="d-none d-sm-none d-lg-block">
               <h2>Libraries</h2>
@@ -181,8 +26,7 @@ export default function Footer(props) {
                 <li>
                   {" "}
                   <a
-                    href="/frontend/ms/central-library/about-central-library"
-                    target="_self"
+                    href="https://nus.edu.sg/nuslibraries/spaces/our-libraries/central-library"
                   >
                     Central Library
                   </a>
@@ -190,17 +34,15 @@ export default function Footer(props) {
                 <li>
                   {" "}
                   <a
-                    href="/frontend/ms/chinese-library-ch/about-chinese-library"
-                    target="_self"
+                    href="https://nus.edu.sg/nuslibraries/spaces/our-libraries/chinese-library"
                   >
-                    Chinese Library
+                    Wan Boo Sow Chinese Library (雲茂潮中文图书馆)
                   </a>
                 </li>
                 <li>
                   {" "}
                   <a
-                    href="/frontend/ms/c-j-koh-law-library/about-c-j-koh-law-library"
-                    target="_self"
+                    href="https://nus.edu.sg/nuslibraries/spaces/our-libraries/c-j-koh-law-library"
                   >
                     C J Koh Law Library
                   </a>
@@ -208,8 +50,7 @@ export default function Footer(props) {
                 <li>
                   {" "}
                   <a
-                    href="/frontend/ms/hon-sui-sen-memorial-library/about-hon-sui-sen-memorial-library"
-                    target="_self"
+                    href="https://nus.edu.sg/nuslibraries/spaces/our-libraries/hon-sui-sen-memorial-library"
                   >
                     Hon Sui Sen Memorial Library
                   </a>
@@ -217,8 +58,7 @@ export default function Footer(props) {
                 <li>
                   {" "}
                   <a
-                    href="/frontend/ms/medical-library/about-medical-library"
-                    target="_self"
+                    href="https://nus.edu.sg/nuslibraries/spaces/our-libraries/medical-library"
                   >
                     Medical Library
                   </a>
@@ -226,8 +66,7 @@ export default function Footer(props) {
                 <li>
                   {" "}
                   <a
-                    href="/frontend/ms/music-library/about-music-library"
-                    target="_self"
+                    href="https://nus.edu.sg/nuslibraries/spaces/our-libraries/music-library"
                   >
                     Music Library
                   </a>
@@ -235,8 +74,7 @@ export default function Footer(props) {
                 <li>
                   {" "}
                   <a
-                    href="/frontend/ms/science-library/about-science-library"
-                    target="_self"
+                    href="https://nus.edu.sg/nuslibraries/spaces/our-libraries/science-library"
                   >
                     Science Library
                   </a>
@@ -244,11 +82,39 @@ export default function Footer(props) {
                 <li>
                   {" "}
                   <a
-                    href="http://library.yale-nus.edu.sg"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="https://nus.edu.sg/nuslibraries/spaces/our-libraries/yale-nus-college-library"
                   >
                     Yale-NUS College Library
+                  </a>
+                </li>
+              </ListGroup>
+            </Col>
+
+            <Col xs={4} sm={4} lg={4} className="d-none d-sm-none d-lg-block">
+              <h2>Tech Central</h2>
+              <ListGroup className={styles.footer_listItem}>
+                <li>
+                  {" "}
+                  <a
+                    href="https://nus.edu.sg/nuslibraries/services-help/research-support/digital-scholarship"
+                  >
+                    Digital Scholarship Lab
+                  </a>
+                </li>
+                <li>
+                  {" "}
+                  <a
+                    href="https://nus.edu.sg/nuslibraries/spaces/tel-imaginarium"
+                  >
+                    TEL Imaginarium
+                  </a>
+                </li>
+                <li>
+                  {" "}
+                  <a
+                    href="https://nus.edu.sg/nuslibraries"
+                  >
+                    360imx (coming soon)
                   </a>
                 </li>
               </ListGroup>

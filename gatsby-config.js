@@ -4,7 +4,7 @@ module.exports = {
     title: `新加坡舊體詩庫`,
     description: `A website to promote the culture of jiutishi as well as to enhance cultural exchange.`,
     author: `Lam Lap`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://nus.edu.sg/nuslibraries/dsprojects/sg-jiutishi`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

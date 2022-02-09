@@ -7,6 +7,8 @@
   新加坡舊體詩庫
 </h1>
 
+Project migrated to Gatsby by [Law Hiu Yan, Karen](https://github.com/karenlaw-0316)
+
 # Documentation
 Documentation on the structure of the project and data is available [here](doc/documentation.md)
 
